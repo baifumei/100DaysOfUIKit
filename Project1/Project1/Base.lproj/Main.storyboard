@@ -47,33 +47,33 @@
             <point key="canvasLocation" x="999.23664122137404" y="1.4084507042253522"/>
         </scene>
         <!--Detail View Controller-->
-        <scene sceneID="TCU-UM-6iR">
+        <scene sceneID="hBx-Z0-f1T">
             <objects>
-                <viewController storyboardIdentifier="Detail" id="zrM-GQ-ScM" customClass="DetailViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pAd-WI-5wM">
+                <viewController storyboardIdentifier="Detail" id="gd8-3F-tm5" customClass="DetailViewController" customModule="Project1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ziL-yP-ilI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="59v-nU-0mu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQC-ne-JtX">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="HJM-zU-bOt"/>
+                        <viewLayoutGuide key="safeArea" id="y6J-ew-mjH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="59v-nU-0mu" firstAttribute="centerY" secondItem="pAd-WI-5wM" secondAttribute="centerY" id="0C3-Yq-tqq"/>
-                            <constraint firstItem="59v-nU-0mu" firstAttribute="leading" secondItem="HJM-zU-bOt" secondAttribute="leading" id="D7x-O9-RDm"/>
-                            <constraint firstItem="59v-nU-0mu" firstAttribute="top" secondItem="pAd-WI-5wM" secondAttribute="topMargin" constant="-59" id="XW8-BK-vO1"/>
-                            <constraint firstItem="59v-nU-0mu" firstAttribute="centerX" secondItem="pAd-WI-5wM" secondAttribute="centerX" id="qQZ-iO-brr"/>
+                            <constraint firstItem="IQC-ne-JtX" firstAttribute="leading" secondItem="ziL-yP-ilI" secondAttribute="leading" id="Dxg-g5-qEf"/>
+                            <constraint firstItem="IQC-ne-JtX" firstAttribute="trailing" secondItem="ziL-yP-ilI" secondAttribute="trailing" id="FDk-AZ-eaX" userLabel="trailing = Image View.trailing"/>
+                            <constraint firstItem="IQC-ne-JtX" firstAttribute="bottom" secondItem="ziL-yP-ilI" secondAttribute="bottom" id="fhT-kL-IOq"/>
+                            <constraint firstItem="IQC-ne-JtX" firstAttribute="top" secondItem="ziL-yP-ilI" secondAttribute="top" id="gF7-hU-Jaj"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="59v-nU-0mu" id="lHw-Xp-TVx"/>
+                        <outlet property="imageView" destination="IQC-ne-JtX" id="QPY-QS-wYa"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Q1-KQ-wp3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkN-uR-J6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942.7480916030534" y="1.4084507042253522"/>
+            <point key="canvasLocation" x="1916.7938931297708" y="0.70422535211267612"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1wC-ND-l0u">
