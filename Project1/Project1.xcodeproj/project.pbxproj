@@ -46,6 +46,7 @@
 		E10C34D62B0E3B9A00D1493C /* nssl0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0033.jpg; sourceTree = "<group>"; };
 		E10C34D72B0E3B9A00D1493C /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
 		E10C34E22B0F4F5000D1493C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E10C34E42B10B84B00D1493C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +87,7 @@
 				E10C34AD2B0E2CC000D1493C /* Assets.xcassets */,
 				E10C34AF2B0E2CC000D1493C /* LaunchScreen.storyboard */,
 				E10C34B22B0E2CC000D1493C /* Info.plist */,
+				E10C34E42B10B84B00D1493C /* README.md */,
 				E10C34CD2B0E3B9A00D1493C /* Content */,
 			);
 			path = Project1;
