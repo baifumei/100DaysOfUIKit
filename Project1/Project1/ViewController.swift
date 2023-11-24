@@ -9,21 +9,17 @@ import UIKit
 
 class ViewController: UITableViewController {
     var pictures = [String]()
-
+    var numberOfPictures = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        //to interact with the file system
         let fm = FileManager.default
-        
-        //a path to the resource directory of the main application bundle
         let path = Bundle.main.resourcePath!
-        
-        //an array of strings representing the names of files and folders located at the specified path
-        let items = try! fm.contentsOfDirectory(atPath: path)
+        let items = try! fm.contentsOfDirectory(atPath: path).sorted()
         
         for item in items {
             if item.hasPrefix("nssl") {
@@ -31,6 +27,7 @@ class ViewController: UITableViewController {
             }
         }
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
     }
@@ -44,6 +41,8 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
+            vc.indexNumber = indexPath.row + 1
+            vc.numberOfPictures = pictures.count
             navigationController?.pushViewController(vc, animated: true)
         }
     }

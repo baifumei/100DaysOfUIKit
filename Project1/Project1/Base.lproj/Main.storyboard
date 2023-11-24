@@ -24,10 +24,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7cf-0B-YG0">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7cf-0B-YG0">
                                             <rect key="frame" x="20" y="0.0" width="334.66666666666669" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQC-ne-JtX">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y6J-ew-mjH"/>
@@ -64,7 +64,7 @@
                             <constraint firstItem="IQC-ne-JtX" firstAttribute="leading" secondItem="ziL-yP-ilI" secondAttribute="leading" id="Dxg-g5-qEf"/>
                             <constraint firstItem="IQC-ne-JtX" firstAttribute="trailing" secondItem="ziL-yP-ilI" secondAttribute="trailing" id="FDk-AZ-eaX" userLabel="trailing = Image View.trailing"/>
                             <constraint firstItem="IQC-ne-JtX" firstAttribute="bottom" secondItem="ziL-yP-ilI" secondAttribute="bottom" id="fhT-kL-IOq"/>
-                            <constraint firstItem="IQC-ne-JtX" firstAttribute="top" secondItem="ziL-yP-ilI" secondAttribute="top" id="gF7-hU-Jaj"/>
+                            <constraint firstItem="IQC-ne-JtX" firstAttribute="top" secondItem="y6J-ew-mjH" secondAttribute="top" id="gF7-hU-Jaj"/>
                         </constraints>
                     </view>
                     <connections>
