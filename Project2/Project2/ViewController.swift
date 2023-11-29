@@ -17,9 +17,16 @@ class ViewController: UIViewController {
     var score = 0
     var correctAnswer = 0
     var questionsAsked = 0
+    var scoreOfTheGame = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scoreOfTheGame.text = "Score: \(score)"
+        scoreOfTheGame.sizeToFit()
+        
+        let rightBarButtonItem = UIBarButtonItem(customView: scoreOfTheGame)
+        navigationItem.rightBarButtonItem = rightBarButtonItem
 
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         button1.layer.borderWidth = 1
@@ -51,9 +58,11 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
+            scoreOfTheGame.text = "Score: \(score)"
         } else {
             title = "Wrong! This is a flag of \(countries[sender.tag].uppercased())"
             score -= 1
+            scoreOfTheGame.text = "Score: \(score)"
         }
         questionsAsked += 1
         
