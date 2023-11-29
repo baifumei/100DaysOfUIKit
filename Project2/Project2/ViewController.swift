@@ -48,12 +48,12 @@ class ViewController: UIViewController {
             print(title)
             score += 1
         } else {
-            title = "Wrong"
+            title = "Wrong! This is a flag of \(countries[sender.tag].uppercased())"
             print(title)
             score -= 1
         }
         let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue?", style: .default, handler: askQuestion))
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         
         present(ac, animated: true)
     }
