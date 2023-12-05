@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E10C34A12B0E2CBF00D1493C /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10C34A12B0E2CBF00D1493C /* Project3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10C34A42B0E2CBF00D1493C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E10C34A62B0E2CBF00D1493C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E10C34A82B0E2CBF00D1493C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		E10C34982B0E2CBF00D1493C = {
 			isa = PBXGroup;
 			children = (
-				E10C34A32B0E2CBF00D1493C /* Project1 */,
+				E10C34A32B0E2CBF00D1493C /* Project3 */,
 				E10C34A22B0E2CBF00D1493C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,26 +71,26 @@
 		E10C34A22B0E2CBF00D1493C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E10C34A12B0E2CBF00D1493C /* Project1.app */,
+				E10C34A12B0E2CBF00D1493C /* Project3.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E10C34A32B0E2CBF00D1493C /* Project1 */ = {
+		E10C34A32B0E2CBF00D1493C /* Project3 */ = {
 			isa = PBXGroup;
 			children = (
 				E10C34A42B0E2CBF00D1493C /* AppDelegate.swift */,
 				E10C34A62B0E2CBF00D1493C /* SceneDelegate.swift */,
 				E10C34A82B0E2CBF00D1493C /* ViewController.swift */,
 				E10C34E22B0F4F5000D1493C /* DetailViewController.swift */,
+				E10C34CD2B0E3B9A00D1493C /* Content */,
 				E10C34AA2B0E2CBF00D1493C /* Main.storyboard */,
 				E10C34AD2B0E2CC000D1493C /* Assets.xcassets */,
 				E10C34AF2B0E2CC000D1493C /* LaunchScreen.storyboard */,
 				E10C34B22B0E2CC000D1493C /* Info.plist */,
 				E10C34E42B10B84B00D1493C /* README.md */,
-				E10C34CD2B0E3B9A00D1493C /* Content */,
 			);
-			path = Project1;
+			path = Project3;
 			sourceTree = "<group>";
 		};
 		E10C34CD2B0E3B9A00D1493C /* Content */ = {
@@ -113,9 +113,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E10C34A02B0E2CBF00D1493C /* Project1 */ = {
+		E10C34A02B0E2CBF00D1493C /* Project3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E10C34B52B0E2CC000D1493C /* Build configuration list for PBXNativeTarget "Project1" */;
+			buildConfigurationList = E10C34B52B0E2CC000D1493C /* Build configuration list for PBXNativeTarget "Project3" */;
 			buildPhases = (
 				E10C349D2B0E2CBF00D1493C /* Sources */,
 				E10C349E2B0E2CBF00D1493C /* Frameworks */,
@@ -125,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = Project1;
+			name = Project3;
 			productName = Project1;
-			productReference = E10C34A12B0E2CBF00D1493C /* Project1.app */;
+			productReference = E10C34A12B0E2CBF00D1493C /* Project3.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -145,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E10C349C2B0E2CBF00D1493C /* Build configuration list for PBXProject "Project1" */;
+			buildConfigurationList = E10C349C2B0E2CBF00D1493C /* Build configuration list for PBXProject "Project3" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -158,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E10C34A02B0E2CBF00D1493C /* Project1 */,
+				E10C34A02B0E2CBF00D1493C /* Project3 */,
 			);
 		};
 /* End PBXProject section */
@@ -343,7 +343,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 28W5962385;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Project1/Info.plist;
+				INFOPLIST_FILE = Project3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -354,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "k-katerina-k.Project1";
+				PRODUCT_BUNDLE_IDENTIFIER = "k-katerina-k.Project3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -371,7 +371,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 28W5962385;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Project1/Info.plist;
+				INFOPLIST_FILE = Project3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -382,7 +382,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "k-katerina-k.Project1";
+				PRODUCT_BUNDLE_IDENTIFIER = "k-katerina-k.Project3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E10C349C2B0E2CBF00D1493C /* Build configuration list for PBXProject "Project1" */ = {
+		E10C349C2B0E2CBF00D1493C /* Build configuration list for PBXProject "Project3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E10C34B32B0E2CC000D1493C /* Debug */,
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E10C34B52B0E2CC000D1493C /* Build configuration list for PBXNativeTarget "Project1" */ = {
+		E10C34B52B0E2CC000D1493C /* Build configuration list for PBXNativeTarget "Project3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E10C34B62B0E2CC000D1493C /* Debug */,

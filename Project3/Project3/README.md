@@ -1,6 +1,6 @@
 #  Storm Viewer
 
-## Project1 is an application that lets users scroll through a list of images, then select one to view. 
+## Project3 is an application that lets users scroll through a list of images, then select one to view. 
 
 💡 what were learned:
 - The basics of UIKit

@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Project1
+//  Project3
 //
 //  Created by Екатерина К on 22.11.2023.
 //
