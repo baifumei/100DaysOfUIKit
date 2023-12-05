@@ -1,6 +1,6 @@
-#  Storm Viewer
+#  Social Media
 
-## Project3 is an application that lets users scroll through a list of images, then select one to view. 
+## Project3 is an application that lets users to save their images, then select one to view. 
 
 💡 what were learned:
 - UIBarButtonItem
@@ -8,11 +8,17 @@
 - @objc
 - #selector
 
-
 From the project1:
 
-<img width="300" alt="P2" src="https://sun9-3.userapi.com/impg/B3xcr0yHpcHveIRP6cYSCaLcoSTTwQxGHSVR3A/2murruVUAXE.jpg?size=700x1398&quality=96&sign=bd07e6213b41509d551812f4c8fa0bd5&type=album"> <img width="300" alt="P2" src="https://sun9-45.userapi.com/impg/ZIJ50Uv5yjyPoojH6n7zZerBYzor0nKfFE_rxA/YLgszyIqFNk.jpg?size=501x1080&quality=96&sign=c2bd414c65b55ddc6811fc28d349b304&type=album">
+<img width="300" alt="P2" src="https://sun9-72.userapi.com/impg/gq3_8gK5r9xHrCnhXfFcDyZSzn-FzWSr6ZJnWA/iUroIA7LKtg.jpg?size=680x1420&quality=96&sign=d5ee222af78e313f17382c0c81b00006&type=album"> <img width="300" alt="P2" src="https://sun9-24.userapi.com/impg/IwAWNHZ8ocESVCC83rjU0VaKCp5XIwcTF7O1Pw/obOhmpofr7Q.jpg?size=680x1420&quality=95&sign=c98cb24ca4ecc2ce0379126670e23a4e&c_uniq_tag=mS5gWKxo0WVekq6T2pKkZp7BOifQ4yQ9FH24pnnuP8Y&type=album">
 
  In project3 added UIBarButtonItem and UIActivityViewController, then fixed a small bug (if select Save Image inside the activity view controller, we’ll see the app crashes immediately), so we edited the Info.plist file for our project.
 
-<img width="300" alt="P2" src="https://sun9-21.userapi.com/impg/JWADCQq3AsHzBm3ycK6yMnodDwUmSwxlgzP5Ug/MN1eM8FEfKY.jpg?size=518x1080&quality=96&sign=d42ac5886a753847c9bde6da1e6921e0&type=album"> <img width="300" alt="P2" src="https://sun9-32.userapi.com/impg/_j31Bb85TDP7kNzOPwaAoekdHok9xGoQwxg3AQ/M1rvXS4aUBw.jpg?size=517x1080&quality=96&sign=80f9f80fcc666999044f5827a96a07ab&type=album">
+<img width="300" alt="P2" src="https://sun9-51.userapi.com/impg/0nO6hqIbol0QuJAk2mb5E_gvQXasgUT-HN0wOQ/ADnC_SHyZ7U.jpg?size=680x1420&quality=96&sign=29f585eb8182a277e209e2d042c8d713&type=album"> <img width="300" alt="P2" src="https://sun6-23.userapi.com/impg/jNsRcMvCne7aoZORe07ZH9e3Ak2yK2jjtRdohg/C7uhIT2Gt70.jpg?size=680x1420&quality=96&sign=9a3c93935028b7b953201c8b6e8c8401&type=album">
+
+## Challenge:
+
+- [x] Try adding the image name to the list of items that are shared;
+- [x] Go back to project 1 and add a bar button item to the main view controller that recommends the app to other people;
+- [x] Go back to project 2 and add a bar button item that shows their score when tapped.
+
