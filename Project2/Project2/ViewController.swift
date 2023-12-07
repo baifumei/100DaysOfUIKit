@@ -22,11 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scoreOfTheGame.text = "Score: \(score)"
-        scoreOfTheGame.sizeToFit()
-        
-        let rightBarButtonItem = UIBarButtonItem(customView: scoreOfTheGame)
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+        //a bar button item that shows their score when tapped (from challenge of project3)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score", style: .done, target: self, action: #selector(showScore))
 
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         button1.layer.borderWidth = 1
@@ -76,6 +73,14 @@ class ViewController: UIViewController {
             ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         }
         present(ac, animated: true)
+    }
+    
+    @objc func showScore() {
+        var message =  "\(score)"
+        let title = "Your score is"
+        let alertControll = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertControll.addAction(UIAlertAction(title: "continue", style: .default))
+        present(alertControll, animated: true)
     }
 }
 

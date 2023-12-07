@@ -37,12 +37,16 @@ class DetailViewController: UIViewController {
     }
     
     @objc func shareTapped() {
+        guard let imageName = selectedImage else {
+            print("Image is not found")
+            return
+        }
         guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
             print("Image is not found")
             return
         }
         
-        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [image, imageName], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
