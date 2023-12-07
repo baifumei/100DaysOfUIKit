@@ -13,6 +13,7 @@
 		E1199A1A2B21F434001E9E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1199A182B21F434001E9E9C /* Main.storyboard */; };
 		E1199A1C2B21F435001E9E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1199A1B2B21F435001E9E9C /* Assets.xcassets */; };
 		E1199A1F2B21F435001E9E9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1199A1D2B21F435001E9E9C /* LaunchScreen.storyboard */; };
+		E1199A272B221C14001E9E9C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E1199A262B221C14001E9E9C /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E1199A1B2B21F435001E9E9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1199A1E2B21F435001E9E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1199A202B21F435001E9E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1199A262B221C14001E9E9C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E1199A122B21F434001E9E9C /* AppDelegate.swift */,
 				E1199A142B21F434001E9E9C /* SceneDelegate.swift */,
 				E1199A162B21F434001E9E9C /* ViewController.swift */,
+				E1199A262B221C14001E9E9C /* README.md */,
 				E1199A182B21F434001E9E9C /* Main.storyboard */,
 				E1199A1B2B21F435001E9E9C /* Assets.xcassets */,
 				E1199A1D2B21F435001E9E9C /* LaunchScreen.storyboard */,
@@ -127,6 +130,7 @@
 			files = (
 				E1199A1F2B21F435001E9E9C /* LaunchScreen.storyboard in Resources */,
 				E1199A1C2B21F435001E9E9C /* Assets.xcassets in Resources */,
+				E1199A272B221C14001E9E9C /* README.md in Resources */,
 				E1199A1A2B21F434001E9E9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
