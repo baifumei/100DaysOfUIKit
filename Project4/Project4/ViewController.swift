@@ -11,6 +11,7 @@ import WebKit
 class ViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
+    var progressView: UIProgressView!
     
     override func loadView() {
         webView = WKWebView()
@@ -26,14 +27,22 @@ class ViewController: UIViewController, WKNavigationDelegate {
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         
-        toolbarItems = [spacer, refresh]
+        //how far the page is through loading
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView.sizeToFit()
+        
+        let progressButton = UIBarButtonItem(customView: progressView)
+        
+        toolbarItems = [progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
+        
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         let url = URL(string: "https://www.hackingwithswift.com/")!
         webView.load(URLRequest(url: url))
-        //enables a property on the web view that allows users to swipe from the left or right edge to move backward or forward in their web browsing
-        webView.allowsBackForwardNavigationGestures = true
         
+        //allows users to swipe from the left or right edge to move backward or forward in their web browsing
+        webView.allowsBackForwardNavigationGestures = true
     }
     
     @objc func openTapped() {
@@ -55,5 +64,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         title = webView.title
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+            if keyPath == "estimatedProgress" {
+                progressView.progress = Float(webView.estimatedProgress)
+            }
+        }
 }
 
