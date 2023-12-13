@@ -27,6 +27,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        let buttonGoBack = UIBarButtonItem(image:  UIImage(systemName: "chevron.backward"), style: .plain, target: webView, action: #selector(webView.goBack))
+        let buttonGoForward = UIBarButtonItem(image:  UIImage(systemName: "chevron.forward"), style: .plain, target: webView, action: #selector(webView.goForward))
         
         //how far the page is through loading
         progressView = UIProgressView(progressViewStyle: .default)
@@ -34,7 +36,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         let progressButton = UIBarButtonItem(customView: progressView)
         
-        toolbarItems = [progressButton, spacer, refresh]
+        toolbarItems = [buttonGoBack, buttonGoForward, spacer, progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
