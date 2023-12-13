@@ -81,6 +81,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     return
                 }
             }
+            let notAllowedAlert = UIAlertController(title: "The URL Link is blocked", message: "The link is broken or it's not supported by the app", preferredStyle: .alert)
+            notAllowedAlert.addAction(UIAlertAction(title: "cancel", style: .cancel))
+            present(notAllowedAlert, animated: true)
         }
         decisionHandler(.cancel)
     }
