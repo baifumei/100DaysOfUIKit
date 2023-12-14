@@ -18,6 +18,8 @@ If the word isn't possible or if it's possible but not original or if the word i
 
 ## Challenge
 
-- [] Disallow answers that are shorter than three letters or are just our start word;
-- [] Refactor all the else statements we just added so that they call a new method called showErrorMessage();
-- [] Add a left bar button item that calls startGame(), so users can restart with a new word whenever they want to.
+- [x] Disallow answers that are shorter than three letters or are just our start word;
+- [x] Refactor all the else statements we just added so that they call a new method called showErrorMessage();
+- [x] Add a left bar button item that calls startGame(), so users can restart with a new word whenever they want to.
+
+<img width="300" alt="P2" src="https://sun9-37.userapi.com/impg/z4QnvLLZiffAJPNoB2vxHkgNmPXj8dEoYxqSFg/WQrXZf6n8V8.jpg?size=620x1340&quality=96&sign=a25b689b5c8e033211acfb87039b7995&type=album"> <img width="300" alt="P2" src="https://sun9-70.userapi.com/impg/gSwsVNVzzo2RB_Y3bataykOXalzNZTumhZB4NA/NS3jCHai7O4.jpg?size=612x1350&quality=96&sign=e0f0fd04ae0093676c7d6a4c7f16555d&type=album"> 
