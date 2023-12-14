@@ -22,4 +22,4 @@ If the word isn't possible or if it's possible but not original or if the word i
 - [x] Refactor all the else statements we just added so that they call a new method called showErrorMessage();
 - [x] Add a left bar button item that calls startGame(), so users can restart with a new word whenever they want to.
 
-<img width="300" alt="P2" src="https://sun9-37.userapi.com/impg/z4QnvLLZiffAJPNoB2vxHkgNmPXj8dEoYxqSFg/WQrXZf6n8V8.jpg?size=620x1340&quality=96&sign=a25b689b5c8e033211acfb87039b7995&type=album"> <img width="300" alt="P2" src="https://sun9-70.userapi.com/impg/gSwsVNVzzo2RB_Y3bataykOXalzNZTumhZB4NA/NS3jCHai7O4.jpg?size=612x1350&quality=96&sign=e0f0fd04ae0093676c7d6a4c7f16555d&type=album"> 
+<img width="300" alt="P2" src="https://sun9-58.userapi.com/impg/kj1R487NhDf0Gx9NGhwHcWVKwzcl5lOVodu1dg/mqPczc6p6hU.jpg?size=630x1320&quality=96&sign=483fe16e3c6c7bf54e2ce9a398441ec7&type=album"> <img width="300" alt="P2" src="https://sun9-21.userapi.com/impg/yUvEI9ItH9l1uZssKsNoTtIbvUoJHFT6HsbW0w/KqIyp4sPY2s.jpg?size=630x1320&quality=96&sign=1bdbad6639a58c6bb57c606b0358565c&type=album"> 
