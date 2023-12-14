@@ -9,10 +9,10 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate {
-
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["hackingwithswift.com", "apple.com"]
+    var websites: [String]!
+    var initialWebsite: String!
     
     override func loadView() {
         webView = WKWebView()
@@ -22,47 +22,43 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        openPage(action: UIAlertAction(title: initialWebsite, style: .default))
+        title = webView.title
+        navigationItem.largeTitleDisplayMode = .never
+        webView.allowsBackForwardNavigationGestures = true
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
-        
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
+
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView.sizeToFit()
+        let progressButton = UIBarButtonItem(customView: progressView)
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         let buttonGoBack = UIBarButtonItem(image:  UIImage(systemName: "chevron.backward"), style: .plain, target: webView, action: #selector(webView.goBack))
         let buttonGoForward = UIBarButtonItem(image:  UIImage(systemName: "chevron.forward"), style: .plain, target: webView, action: #selector(webView.goForward))
         
-        //how far the page is through loading
-        progressView = UIProgressView(progressViewStyle: .default)
-        progressView.sizeToFit()
-        
-        let progressButton = UIBarButtonItem(customView: progressView)
-        
         toolbarItems = [buttonGoBack, buttonGoForward, spacer, progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
-        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-        
-        let url = URL(string: "https://" + websites[0])!
-        webView.load(URLRequest(url: url))
-        
-        //allows users to swipe from the left or right edge to move backward or forward in their web browsing
-        webView.allowsBackForwardNavigationGestures = true
+//        let url = URL(string: "https://" + initialWebsite)!
+//        webView.load(URLRequest(url: url))
     }
     
-    @objc func openTapped() {
-        let ac = UIAlertController(title: "Open page...", message: nil, preferredStyle: .actionSheet)
-        for website in websites {
-            ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
-        }
-        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(ac, animated: true)
-    }
+//    @objc func openTapped() {
+//           let ac = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//           for website in websites {
+//               ac.addAction(UIAlertAction(title: website, style: .default, handler: openPage))
+//           }
+//           ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+//           ac.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+//           present(ac, animated: true)
+//       }
     
     func openPage(action: UIAlertAction) {
-        guard let actionTitle = action.title else { return }
-        guard let url = URL(string: "https://" + actionTitle) else { return }
-        webView.load(URLRequest(url: url))
-    }
+            let url = URL(string: "https://\(action.title!)")!
+            webView.load(URLRequest(url: url))
+        }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
@@ -73,6 +69,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 progressView.progress = Float(webView.estimatedProgress)
             }
         }
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         let url = navigationAction.request.url
         
