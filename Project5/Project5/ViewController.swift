@@ -8,10 +8,24 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    var allWords = [String]()
+    var usedWords = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //finding the path to start.txt file
+        if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
+            //loading the contents of that file
+            if let startWords = try? String(contentsOf: startWordsURL) {
+                //splitting it into an array
+                allWords = startWords.components(separatedBy: "\n")
+            }
+        }
+        
+        if allWords.isEmpty {
+            allWords = ["silkworm"]
+        }
     }
 
 
