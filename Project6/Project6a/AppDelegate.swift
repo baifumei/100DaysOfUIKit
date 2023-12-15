@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Project2
+//  Project6a
 //
 //  Created by Екатерина К on 24.11.2023.
 //
