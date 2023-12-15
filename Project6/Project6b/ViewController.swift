@@ -47,6 +47,18 @@ class ViewController: UIViewController {
         view.addSubview(lable3)
         view.addSubview(lable4)
         view.addSubview(lable5)
+        
+        let viewsDictionary = ["lable1": lable1, "lable2": lable2, "lable3": lable3, "lable4": lable4, "lable5": lable5]
+        
+        
+        //H: - horizontal layout
+        //| | - the edge of the view
+        //[\(lable)] - put label here. Brackets are the "edges" of the view
+        for lable in viewsDictionary.keys {
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(lable)]|", options: [], metrics: nil, views: viewsDictionary))
+        }
+        
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lable1]-[lable2]-[lable3]-[lable4]-[lable5]", metrics: nil, views: viewsDictionary))
     }
 
 
