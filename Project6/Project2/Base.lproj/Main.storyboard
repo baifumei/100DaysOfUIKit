@@ -18,6 +18,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZx-XH-4JU">
                                 <rect key="frame" x="107" y="128" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GZx-XH-4JU" secondAttribute="height" multiplier="2:1" id="yRZ-s0-x5X"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="us"/>
                                 <connections>
@@ -26,6 +29,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47a-oD-ANZ">
                                 <rect key="frame" x="107" y="388" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="47a-oD-ANZ" secondAttribute="height" multiplier="2:1" id="RiP-PK-1sQ"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="us"/>
                                 <connections>
@@ -34,6 +40,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5f-ew-Re0">
                                 <rect key="frame" x="107" y="258" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k5f-ew-Re0" secondAttribute="height" multiplier="2:1" id="KnA-2y-2rs"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="us"/>
                                 <connections>
@@ -45,7 +54,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GZx-XH-4JU" firstAttribute="centerX" secondItem="dhQ-NJ-8uW" secondAttribute="centerX" id="7A5-WH-Mw3"/>
+                            <constraint firstItem="k5f-ew-Re0" firstAttribute="height" secondItem="GZx-XH-4JU" secondAttribute="height" id="9Gl-Lo-jnj"/>
                             <constraint firstItem="47a-oD-ANZ" firstAttribute="top" secondItem="k5f-ew-Re0" secondAttribute="bottom" constant="30" id="FHd-Ky-22N"/>
+                            <constraint firstItem="dhQ-NJ-8uW" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="47a-oD-ANZ" secondAttribute="bottom" constant="20" id="Yi4-hD-nTd"/>
+                            <constraint firstItem="47a-oD-ANZ" firstAttribute="height" secondItem="k5f-ew-Re0" secondAttribute="height" id="Zc8-TU-Ez2"/>
                             <constraint firstItem="k5f-ew-Re0" firstAttribute="top" secondItem="GZx-XH-4JU" secondAttribute="bottom" constant="30" id="e42-yf-Z9w"/>
                             <constraint firstItem="GZx-XH-4JU" firstAttribute="top" secondItem="dhQ-NJ-8uW" secondAttribute="top" constant="36" id="jk2-BF-4qT"/>
                             <constraint firstItem="k5f-ew-Re0" firstAttribute="centerX" secondItem="GZx-XH-4JU" secondAttribute="centerX" id="mNQ-vk-z43"/>
