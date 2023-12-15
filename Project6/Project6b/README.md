@@ -6,4 +6,8 @@
 - .addConstraints with Visual Format Language
 
 
-<img width="300" alt="P2" src="https://sun9-4.userapi.com/impg/Cu4T-MnDMRqHyfO-9WchFzniJLPIyiqo_WDC0Q/Uzs16opHh8Q.jpg?size=640x1320&quality=96&sign=c940f5ad48e47a4f5140e834724b4e4b&type=album"> <img width="300" alt="P2" src="https://sun9-43.userapi.com/impg/c7-sV0vfhi9wI53pvXIK8CWZYklDe8VmvRah3g/StVh8w84PzA.jpg?size=640x1320&quality=96&sign=d94257a0d5a40931ceeed6c1ff7d2c91&type=album"> <img width="300" alt="P2" src="https://sun9-28.userapi.com/impg/ZyqgdF2jxq7RP0esrRFV71JPX_NwuzmQNoyKMQ/LKenAOY-mM4.jpg?size=1190x720&quality=96&sign=3d85e67bfda72a97c3477194b1cce723&type=album">
+<img width="300" alt="P2" src="https://sun9-4.userapi.com/impg/Cu4T-MnDMRqHyfO-9WchFzniJLPIyiqo_WDC0Q/Uzs16opHh8Q.jpg?size=640x1320&quality=96&sign=c940f5ad48e47a4f5140e834724b4e4b&type=album"> <img width="300" alt="P2" src="https://sun9-43.userapi.com/impg/c7-sV0vfhi9wI53pvXIK8CWZYklDe8VmvRah3g/StVh8w84PzA.jpg?size=640x1320&quality=96&sign=d94257a0d5a40931ceeed6c1ff7d2c91&type=album"> 
+
+When the app is rotated to landscape, there's a message - "Unable to simultaneously satisfy constraints." This means your constraints simply don't work given how much screen space there is, and that's where priority comes in. Constraint priority is a value between 1 and 1000, where 1000 means "this is absolutely required" and anything less is optional. By default, all constraints you have are priority 1000, so Auto Layout will fail to find a solution in our current layout (pic.1). 
+
+<img width="500" alt="P2" src="https://sun9-28.userapi.com/impg/ZyqgdF2jxq7RP0esrRFV71JPX_NwuzmQNoyKMQ/LKenAOY-mM4.jpg?size=1190x720&quality=96&sign=3d85e67bfda72a97c3477194b1cce723&type=album"> <img width="500" alt="P2" src="https://sun9-46.userapi.com/impg/jvd99fkhj7QPHq-LJVYqumLfXJR1VO1Sp09jBg/SktJzrXgEio.jpg?size=1190x718&quality=96&sign=d8a8b0993a6e9b37e726cd441e9e9f78&type=album">
