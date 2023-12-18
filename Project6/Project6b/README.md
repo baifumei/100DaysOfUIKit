@@ -19,3 +19,10 @@ Every UIView has a set of anchors that define its layouts rules. The most import
 The best bit about working with anchors is that they can be created relative to other anchors.
 
 <img width="300" alt="P2" src="https://sun9-16.userapi.com/impg/ei-I3G3LqeHlYhb4KFF3bpUu7AVYb4Mio0_5MA/vstQnP3kd7Q.jpg?size=640x1340&quality=96&sign=78ddf6caa6acef006c4585c86f561eec&type=album"> <img width="300" alt="P2" src="https://sun9-28.userapi.com/impg/3aEXff3A6g-eOOBdZsBF_6rEqs4AWt8g7ulY4Q/FLtQx-w-Nag.jpg?size=640x1340&quality=96&sign=f817b5f4e72a8e1f445154e181bc1ebc&type=album">
+
+
+##Challenge
+
+- [x] Try replacing the widthAnchor of our labels with leadingAnchor and trailingAnchor constraints, which more explicitly pin the label to the edges of its parent.
+- [ ] Once you’ve completed the first challenge, try using the safeAreaLayoutGuide for those constraints. You can see if this is working by rotating to landscape, because the labels won’t go under the safe area.
+- [ ] Try making the height of your labels equal to 1/5th of the main view, minus 10 for the spacing. This is a hard one, but I’ve included hints below!
