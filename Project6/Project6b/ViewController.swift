@@ -48,21 +48,32 @@ class ViewController: UIViewController {
         view.addSubview(lable4)
         view.addSubview(lable5)
         
-        let viewsDictionary = ["lable1": lable1, "lable2": lable2, "lable3": lable3, "lable4": lable4, "lable5": lable5]
+        //The first way:
+//        let viewsDictionary = ["lable1": lable1, "lable2": lable2, "lable3": lable3, "lable4": lable4, "lable5": lable5]
+//
+//
+//        //H: - horizontal layout, | | - the edge of the view, [\(lable)] - put label here. Brackets are the "edges" of the view
+//        for lable in viewsDictionary.keys {
+//            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(lable)]|", options: [], metrics: nil, views: viewsDictionary))
+//        }
+//
+//        let metrics = ["lableHeight": 88]
+//
+//        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lable1(lableHeight@999)]-[lable2(lable1)]-[lable3(lable1)]-[lable4(lable1)]-[lable5(lable1)]-(>=10)-|", metrics: metrics, views: viewsDictionary))
         
+       //The second way:
+        var previous: UILabel?
         
-        //H: - horizontal layout
-        //| | - the edge of the view
-        //[\(lable)] - put label here. Brackets are the "edges" of the view
-        for lable in viewsDictionary.keys {
-            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(lable)]|", options: [], metrics: nil, views: viewsDictionary))
+        for lable in [lable1, lable2, lable3, lable4, lable5] {
+            lable.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+            lable.heightAnchor.constraint(equalToConstant: 88).isActive = true
+            if let previous = previous {
+                lable.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
+            } else {
+                lable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+            }
+            previous = lable
         }
-        
-        let metrics = ["lableHeight": 88]
-        
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lable1(lableHeight@999)]-[lable2(lable1)]-[lable3(lable1)]-[lable4(lable1)]-[lable5(lable1)]-(>=10)-|", metrics: metrics, views: viewsDictionary))
     }
-
-
 }
 
