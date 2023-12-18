@@ -65,11 +65,11 @@ class ViewController: UIViewController {
         var previous: UILabel?
         
         for lable in [lable1, lable2, lable3, lable4, lable5] {
-//            lable.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            lable.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-            lable.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
             
-            lable.heightAnchor.constraint(equalToConstant: 88).isActive = true
+            lable.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+            lable.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+            lable.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2, constant: -10).isActive = true
+            
             if let previous = previous {
                 lable.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
             } else {
