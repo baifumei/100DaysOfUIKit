@@ -45,6 +45,10 @@ class ViewController: UITableViewController {
         
         return cell
     }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ac = DetailViewController()
+        ac.detailItem = petitions[indexPath.row]
+        navigationController?.pushViewController(ac, animated: true)
+    }
 }
 
