@@ -13,6 +13,7 @@
 		E1C433A92B3184AF00BD5BCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C433A72B3184AF00BD5BCB /* Main.storyboard */; };
 		E1C433AB2B3184B000BD5BCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C433AA2B3184B000BD5BCB /* Assets.xcassets */; };
 		E1C433AE2B3184B000BD5BCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C433AC2B3184B000BD5BCB /* LaunchScreen.storyboard */; };
+		E1C433B62B31931C00BD5BCB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E1C433B52B31931C00BD5BCB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E1C433AA2B3184B000BD5BCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1C433AD2B3184B000BD5BCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1C433AF2B3184B000BD5BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1C433B52B31931C00BD5BCB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E1C433A12B3184AF00BD5BCB /* AppDelegate.swift */,
 				E1C433A32B3184AF00BD5BCB /* SceneDelegate.swift */,
 				E1C433A52B3184AF00BD5BCB /* ViewController.swift */,
+				E1C433B52B31931C00BD5BCB /* README.md */,
 				E1C433A72B3184AF00BD5BCB /* Main.storyboard */,
 				E1C433AA2B3184B000BD5BCB /* Assets.xcassets */,
 				E1C433AC2B3184B000BD5BCB /* LaunchScreen.storyboard */,
@@ -127,6 +130,7 @@
 			files = (
 				E1C433AE2B3184B000BD5BCB /* LaunchScreen.storyboard in Resources */,
 				E1C433AB2B3184B000BD5BCB /* Assets.xcassets in Resources */,
+				E1C433B62B31931C00BD5BCB /* README.md in Resources */,
 				E1C433A92B3184AF00BD5BCB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
