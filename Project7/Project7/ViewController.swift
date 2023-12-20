@@ -14,6 +14,8 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         let urlString: String
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "doc"), style: .plain, target: self, action: #selector(showCredits))
+        
         if navigationController?.tabBarItem.tag == 0 {
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         } else {
@@ -29,11 +31,21 @@ class ViewController: UITableViewController {
         showError()
     }
     
+    
+    
     func showError() {
         let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; please check your connection and try again.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
+    
+    //MARK: - Credits
+    @objc func showCredits() {
+        let ac = UIAlertController(title: "Source", message: "Data comes from the We The People API of the Whitehouse", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "I see", style: .cancel))
+        present(ac, animated: true)
+    }
+    
     
     //MARK: - Decoder
     func parse(json: Data) {
