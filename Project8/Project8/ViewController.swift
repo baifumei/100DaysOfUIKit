@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         view = UIView()
         view.backgroundColor = .cyan
         
-        //MARK: - Score
+        //MARK: - score
         scoreLable = UILabel()
         scoreLable.translatesAutoresizingMaskIntoConstraints = false
         scoreLable.textAlignment = .right
@@ -27,12 +27,13 @@ class ViewController: UIViewController {
         scoreLable.font = UIFont.systemFont(ofSize: 21)
         view.addSubview(scoreLable)
         
-        //MARK: - Clues
+        //MARK: - clues
         cluesLable = UILabel()
         cluesLable.translatesAutoresizingMaskIntoConstraints = false
         cluesLable.font = UIFont.systemFont(ofSize: 24)
         cluesLable.text = "CLUES"
         cluesLable.numberOfLines = 0
+        cluesLable.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
         view.addSubview(cluesLable)
         
         //MARK: - answersLable
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
         answersLable.text = "ANSWERS"
         answersLable.textAlignment = .right
         answersLable.numberOfLines = 0
+        answersLable.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
         view.addSubview(answersLable)
         
         //MARK: - currentAnswer
@@ -53,7 +55,7 @@ class ViewController: UIViewController {
         currentAnswer.isUserInteractionEnabled = false
         view.addSubview(currentAnswer)
         
-        //MARK: - Buttons
+        //MARK: - submitAndClear
         let submit = UIButton(type: .system)
         submit.translatesAutoresizingMaskIntoConstraints = false
         submit.setTitle("SUBMIT", for: .normal)
@@ -63,9 +65,12 @@ class ViewController: UIViewController {
         clear.translatesAutoresizingMaskIntoConstraints = false
         clear.setTitle("CLEAR", for: .normal)
         view.addSubview(clear)
+        
+        let buttonsView = UIView()
+        buttonsView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonsView)
 
-//        lettersButton = [UIButton]()
-//        lettersButton.translatesAutoresizingMaskIntoConstraints = false
+        lettersButton = [UIButton]()
         
         //MARK: - AutoLayout
         NSLayoutConstraint.activate([
@@ -93,13 +98,43 @@ class ViewController: UIViewController {
             
             clear.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
             clear.heightAnchor.constraint(equalToConstant: 44),
-            clear.centerYAnchor.constraint(equalTo: submit.centerYAnchor)
+            clear.centerYAnchor.constraint(equalTo: submit.centerYAnchor),
+            
+            buttonsView.widthAnchor.constraint(equalToConstant: 750),
+            buttonsView.heightAnchor.constraint(equalToConstant: 320),
+            buttonsView.topAnchor.constraint(equalTo: submit.bottomAnchor, constant: 20),
+            buttonsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20)
             
             
         ])
+        
+        //MARK: - ButtonsInFrame
+        let width = 150
+        let height = 80
+        
+        for row in 0..<4 {
+            for column in 0..<5 {
+                let letterButton = UIButton(type: .system)
+                letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+                letterButton.setTitle("WWW", for: .normal)
+                
+                let frame = CGRect(x: column * width, y: row * height, width: width, height: height)
+                letterButton.frame = frame
+                
+                buttonsView.addSubview(letterButton)
+                lettersButton.append(letterButton)
+            }
+        }
+        
+        
+        
+        
+        
         cluesLable.backgroundColor = .yellow
         answersLable.backgroundColor = .orange
         currentAnswer.backgroundColor = .green
+        buttonsView.backgroundColor = .brown
     }
     
     override func viewDidLoad() {
