@@ -40,14 +40,30 @@ class ViewController: UIViewController {
         answersLable.translatesAutoresizingMaskIntoConstraints = false
         answersLable.font = UIFont.systemFont(ofSize: 24)
         answersLable.text = "ANSWERS"
+        answersLable.textAlignment = .right
         answersLable.numberOfLines = 0
         view.addSubview(answersLable)
         
         //MARK: - currentAnswer
-//        currentAnswer = UITextField()
-//        currentAnswer.translatesAutoresizingMaskIntoConstraints = false
+        currentAnswer = UITextField()
+        currentAnswer.translatesAutoresizingMaskIntoConstraints = false
+        currentAnswer.placeholder = "Tap letters to guess"
+        currentAnswer.textAlignment = .center
+        currentAnswer.font = UIFont.systemFont(ofSize: 40)
+        currentAnswer.isUserInteractionEnabled = false
+        view.addSubview(currentAnswer)
         
-        //MARK: - lettersButton
+        //MARK: - Buttons
+        let submit = UIButton(type: .system)
+        submit.translatesAutoresizingMaskIntoConstraints = false
+        submit.setTitle("SUBMIT", for: .normal)
+        view.addSubview(submit)
+
+        let clear = UIButton(type: .system)
+        clear.translatesAutoresizingMaskIntoConstraints = false
+        clear.setTitle("CLEAR", for: .normal)
+        view.addSubview(clear)
+
 //        lettersButton = [UIButton]()
 //        lettersButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -65,9 +81,25 @@ class ViewController: UIViewController {
             answersLable.trailingAnchor.constraint(equalTo:  view.layoutMarginsGuide.trailingAnchor, constant: -100),
             answersLable.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor, multiplier: 0.4, constant: -100),
             
-            answersLable.heightAnchor.constraint(equalTo: cluesLable.heightAnchor)
+            answersLable.heightAnchor.constraint(equalTo: cluesLable.heightAnchor),
+            
+            currentAnswer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            currentAnswer.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            currentAnswer.topAnchor.constraint(equalTo: cluesLable.bottomAnchor, constant: 20),
+            
+            submit.topAnchor.constraint(equalTo: currentAnswer.bottomAnchor),
+            submit.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -100),
+            submit.heightAnchor.constraint(equalToConstant: 44),
+            
+            clear.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
+            clear.heightAnchor.constraint(equalToConstant: 44),
+            clear.centerYAnchor.constraint(equalTo: submit.centerYAnchor)
+            
             
         ])
+        cluesLable.backgroundColor = .yellow
+        answersLable.backgroundColor = .orange
+        currentAnswer.backgroundColor = .green
     }
     
     override func viewDidLoad() {
