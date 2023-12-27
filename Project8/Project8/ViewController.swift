@@ -158,13 +158,24 @@ class ViewController: UIViewController {
             answersLable.text = splitAnswers?.joined(separator: "\n")
             currentAnswer.text = ""
             score += 1
-                        
+            
             if score % 7 == 0 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "Let's go", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            score -= 1
+            currentAnswer.text = ""
+            for button in activatedButtons {
+                button.isHidden = false
+            }
+            
+            let ac = UIAlertController(title: "Your answer is wrong!", message: "Try again", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
+            present(ac, animated: true)
         }
+        
     }
     
     @objc func clearTapped(_ sender: UIButton) {
