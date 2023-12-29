@@ -6,6 +6,7 @@
 - Grand Central Dispatch (GCD)
 - async()
 - QoS (userInteractive, userInitiated, utility, background)
+- "it's never OK to do user interface work on the background thread"
 
 From the Projict7:
 
