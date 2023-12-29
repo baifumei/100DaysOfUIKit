@@ -22,15 +22,24 @@ class ViewController: UITableViewController {
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
         
-        for item in items {
-            if item.hasPrefix("nssl") {
-                pictures.append(item)
+        //from the challenge of the project9
+        DispatchQueue.global(qos: .background).async { [self] in
+            let items = try! fm.contentsOfDirectory(atPath: path)
+            for item in items {
+                if item.hasPrefix("nssl") {
+                    self.pictures.append(item)
+                }
+            }
+            self.pictures.sort()
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-        pictures.sort()
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
