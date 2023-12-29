@@ -34,10 +34,13 @@ class ViewController: UITableViewController {
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
         
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) { //Data(contentsOf: url) - блокирующий вызов
-                parse(json: data)
-                return
+        //фоновый поток
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) { //Data(contentsOf: url) - блокирующий вызов
+                    self?.parse(json: data)
+                    return
+                }
             }
         }
         showError()
