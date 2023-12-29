@@ -199,35 +199,39 @@ class ViewController: UIViewController {
         var solutionsString = ""
         var letterBits = [String]()
         
-        
-        if let levelFileURL = Bundle.main.url(forResource: "level\(level)", withExtension: "txt") {
-            if let levelContents = try? String(contentsOf: levelFileURL) {
-                var lines = levelContents.components(separatedBy: "\n")
-                lines.shuffle()
-                
-                for (index, line) in lines.enumerated() {
-                    let parts = line.components(separatedBy: ": ")
-                    let answer = parts[0]
-                    let clue = parts[1]
+     //Challenge2 from the project9
+        DispatchQueue.global(qos: .background).async {
+            if let levelFileURL = Bundle.main.url(forResource: "level\(self.level)", withExtension: "txt") {
+                if let levelContents = try? String(contentsOf: levelFileURL) {
+                    var lines = levelContents.components(separatedBy: "\n")
+                    lines.shuffle()
                     
-                    clueString += "\(index + 1). \(clue)\n"
-                    
-                    
-                    let solutionWord = answer.replacingOccurrences(of: "|", with: "")
-                    solutionsString += "\(solutionWord.count) letters\n"
-                    solutions.append(solutionWord)
-                    
-                    let bits = answer.components(separatedBy: "|")
-                    letterBits += bits
+                    for (index, line) in lines.enumerated() {
+                        let parts = line.components(separatedBy: ": ")
+                        let answer = parts[0]
+                        let clue = parts[1]
+                        
+                        clueString += "\(index + 1). \(clue)\n"
+                        
+                        
+                        let solutionWord = answer.replacingOccurrences(of: "|", with: "")
+                        solutionsString += "\(solutionWord.count) letters\n"
+                        self.solutions.append(solutionWord)
+                        
+                        let bits = answer.components(separatedBy: "|")
+                        letterBits += bits
+                    }
                 }
             }
-            cluesLable.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
-            answersLable.text = solutionsString.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            letterButtons.shuffle()
-            if letterBits.count == letterButtons.count {
-                for i in 0..<letterButtons.count {
-                    letterButtons[i].setTitle(letterBits[i], for: .normal)
+            DispatchQueue.main.async {
+                self.cluesLable.text = clueString.trimmingCharacters(in: .whitespacesAndNewlines)
+                self.answersLable.text = solutionsString.trimmingCharacters(in: .whitespacesAndNewlines)
+                
+                self.letterButtons.shuffle()
+                if letterBits.count == self.letterButtons.count {
+                    for i in 0..<self.letterButtons.count {
+                        self.letterButtons[i].setTitle(letterBits[i], for: .normal)
+                    }
                 }
             }
         }
