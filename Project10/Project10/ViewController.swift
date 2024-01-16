@@ -40,10 +40,19 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     }
     
     @objc func addNewPerson() {
+        let ac = UIAlertController(title: "Add a photo", message: nil, preferredStyle: .alert)
         let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.delegate = self
-        present(picker, animated: true)
+        
+        ac.addAction(UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
+            picker.sourceType = .camera
+            self?.present(picker, animated: true)
+        })
+        ac.addAction(UIAlertAction(title: "Media", style: .default) { [weak self] _ in
+            picker.allowsEditing = true
+            picker.delegate = self
+            self?.present(picker, animated: true)
+        })
+        present(ac, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -69,6 +78,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         return paths[0]
     }
     
+    //MARK: - Rename/delete
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let person = people[indexPath.item]
         
