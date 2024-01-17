@@ -43,6 +43,7 @@
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="customSize" width="140" height="180"/>
                                 <connections>
                                     <outlet property="imageView" destination="dqi-SQ-pgz" id="1Ig-Sj-IPB"/>
                                     <outlet property="name" destination="kSv-F2-dv5" id="RtR-ip-iGa"/>
