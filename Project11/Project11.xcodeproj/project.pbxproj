@@ -15,6 +15,7 @@
 		E1A3C94D2B5850F70055E96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A3C94C2B5850F70055E96F /* Assets.xcassets */; };
 		E1A3C9502B5850F70055E96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A3C94E2B5850F70055E96F /* LaunchScreen.storyboard */; };
 		E1A3C9572B5E8F740055E96F /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1A3C9562B5E8F740055E96F /* FireParticles.sks */; };
+		E1A3C95B2B5E92B90055E96F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E1A3C95A2B5E92B90055E96F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E1A3C94C2B5850F70055E96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1A3C94F2B5850F70055E96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A3C9562B5E8F740055E96F /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
+		E1A3C95A2B5E92B90055E96F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				E1A3C94C2B5850F70055E96F /* Assets.xcassets */,
 				E1A3C94E2B5850F70055E96F /* LaunchScreen.storyboard */,
 				E1A3C9562B5E8F740055E96F /* FireParticles.sks */,
+				E1A3C95A2B5E92B90055E96F /* README.md */,
 			);
 			path = Project11;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A3C95B2B5E92B90055E96F /* README.md in Resources */,
 				E1A3C94B2B5850F60055E96F /* Main.storyboard in Resources */,
 				E1A3C9422B5850F60055E96F /* GameScene.sks in Resources */,
 				E1A3C9572B5E8F740055E96F /* FireParticles.sks in Resources */,
