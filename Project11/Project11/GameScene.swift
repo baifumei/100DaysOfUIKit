@@ -18,9 +18,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var editLable: SKLabelNode!
     
-    var editMode: Bool = false {
+    var editingMode: Bool = false {
         didSet {
-            if editMode {
+            if editingMode {
                 editLable.text = "Done"
             } else {
                 editLable.text = "Edit"
@@ -64,16 +64,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
+        let objects = nodes(at: location)
         
-        let ball = SKSpriteNode(imageNamed: "ballRed")
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
-        ball.physicsBody?.restitution = 0.8
-        
-        //contactTestBitMask — это свойство физического тела, которое определяет, с какими другими категориями физических тел должны регистрироваться контакты.
-        ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
-        ball.position = location
-        ball.name = "ball"
-        addChild(ball)
+        if objects.contains(editLable) {
+            editingMode.toggle()
+        } else {
+            if editingMode {
+                //create a box
+                let size = CGSize(width: Int.random(in: 30...128), height: 12)
+                let box = SKSpriteNode(color: UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1), size: size)
+                box.zRotation = CGFloat.random(in: 0...3)
+                box.position = location
+                
+                box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
+                box.physicsBody?.isDynamic = false
+                addChild(box)
+                
+            } else {
+                let ball = SKSpriteNode(imageNamed: "ballRed")
+                ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+                ball.physicsBody?.restitution = 0.8
+                
+                //contactTestBitMask — это свойство физического тела, которое определяет, с какими другими категориями физических тел должны регистрироваться контакты.
+                ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
+                ball.position = location
+                ball.name = "ball"
+                addChild(ball)
+            }
+        }
     }
     
     func makeBouncer(at position: CGPoint) {
