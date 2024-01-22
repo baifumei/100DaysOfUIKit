@@ -8,12 +8,26 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    var scoreLable: SKLabelNode!
+    
+    var score = 0 {
+        didSet {
+            scoreLable.text = "Score: \(score)"
+        }
+    }
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
         background.blendMode = .replace
         background.zPosition = -1
         addChild(background)
+        
+        scoreLable = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLable.text = "Score: 0"
+        scoreLable.horizontalAlignmentMode = .right
+        scoreLable.position = CGPoint(x: 980, y: 700)
+        addChild(scoreLable)
         
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsWorld.contactDelegate = self
@@ -83,8 +97,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func collision(between ball: SKNode, object: SKNode) {
         if object.name == "good" {
             destroy(ball: ball)
+            score += 1
         } else if object.name == "bad" {
             destroy(ball: ball)
+            score -= 1
         }
     }
     func destroy(ball: SKNode) {
