@@ -8,6 +8,8 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    let ballColor: [String] = ["ballRed", "ballBlue", "ballGreen", "ballCyan", "ballGrey", "ballPurple", "ballYellow"]
+    
     var scoreLable: SKLabelNode!
     
     var score = 0 {
@@ -81,7 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(box)
                 
             } else {
-                let ball = SKSpriteNode(imageNamed: "ballRed")
+                let ball = SKSpriteNode(imageNamed: ballColor.randomElement()!)
                 ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                 ball.physicsBody?.restitution = 0.8
                 
