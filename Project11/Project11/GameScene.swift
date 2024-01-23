@@ -90,7 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                     ball.physicsBody?.restitution = 0.8
                     
-                    //contactTestBitMask — это свойство физического тела, которое определяет, с какими другими категориями физических тел должны регистрироваться контакты.
+                    //collisionBitMask determines what objects a node bounces off, and contactTestBitMask determines which collisions are reported to us. OR: The collision bitmask determines bounces; the contact test bitmask determines which bounces we get told about.
                     ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
                     ball.position = CGPoint(x: location.x, y: 650)
                     ball.name = "ball"
