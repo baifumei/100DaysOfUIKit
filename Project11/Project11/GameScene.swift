@@ -89,7 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 //contactTestBitMask — это свойство физического тела, которое определяет, с какими другими категориями физических тел должны регистрироваться контакты.
                 ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
-                ball.position = location
+                ball.position = CGPoint(x: location.x, y: 650)
                 ball.name = "ball"
                 addChild(ball)
             }
