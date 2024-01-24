@@ -13,6 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
 
+        // Сохранение данных
         defaults.set(25, forKey: "Age")
         defaults.set(true, forKey: "UseTouchID")
         defaults.set(CGFloat.pi, forKey: "Pi")
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         let dict = ["Name": "Paul", "Country": "UK"]
         defaults.set(dict, forKey: "SavedDict")
         
+        //Извлечение данных
         let SavedArray = defaults.object(forKey:"SavedArray") as? [String] ?? [String]()
         let SavedDict = defaults.object(forKey: "SavedDict") as? [String: String] ?? [String: String]()
 
