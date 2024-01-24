@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     var pictures = [String]()
-    var numberOfPictures = Int()
+    var viewCount = [String: Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,19 @@ class ViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedData = defaults.object(forKey: "viewCount") as? Data {
+            let jsonDecoder = JSONDecoder()
+
+            do {
+                viewCount = try jsonDecoder.decode([String: Int].self, from: savedData)
+            }
+            catch {
+                print("Failed to load")
+            }
+        }
     }
     
     
@@ -47,13 +60,19 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
+        let picture = pictures[indexPath.row]
+        cell.textLabel?.text = picture
+        cell.detailTextLabel?.text = "view count:" + String(viewCount[picture] ?? 0)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
-            vc.selectedImage = pictures[indexPath.row]
+            let picture = pictures[indexPath.row]
+            viewCount[picture] = (viewCount[picture] ?? 0) + 1
+            save()
+            tableView.reloadData()
+            vc.selectedImage = picture
             vc.indexNumber = indexPath.row + 1
             vc.numberOfPictures = pictures.count
             navigationController?.pushViewController(vc, animated: true)
@@ -61,11 +80,21 @@ class ViewController: UITableViewController {
     }
     
     @objc func recommendTheApp() {
-            let message = "Посмотрите это приложение!"
-            
-            let vc = UIActivityViewController(activityItems: [message], applicationActivities: nil)
-            vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-            present(vc, animated: true)
+        let message = "Посмотрите это приложение!"
+        
+        let vc = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(viewCount) {
+            UserDefaults.standard.set(savedData, forKey: "viewCount")
+        } else {
+            print("Failed to save how many times each picture was opened")
         }
+    }
 }
 
