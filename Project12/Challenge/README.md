@@ -6,4 +6,4 @@
 
 ## Changes of project 1:
 
-<img width="300" alt="P2" src="https://vk.com/doc195760655_674234483?hash=cGtVZame9GWPW4kiUL8FAqsKQGfzTARkKcLv5DIRYu8&dl=iJ0XD0kCfKZmCBRZFw1ZlwSq5agLmfuNts2pzilGMtH"> <img width="300" alt="P2" src="https://vk.com/doc195760655_674234485?hash=gSWITPza40pBG29z8NsiL4mbpPTmus4YPNMjz91YoAT&dl=QTm24nZBuq5naR7q9YuLgfY8qixGHzzUg2Co8LqqVf4">
+<img width="300" alt="P2" src="https://sun9-35.userapi.com/impg/AjtUbvAf1e1wnMnwqAwd5LJURPRYwLVTYi_h6g/pkMzFhOodwk.jpg?size=996x2160&quality=95&sign=8eab49a1cd2486a24ae3b842a9e20ec1&type=album"> <img width="300" alt="P2" src="https://sun9-20.userapi.com/impg/S5DeNXdXrsyaEzROLBty_tyPf2mc9Qh81JmenQ/321kazpJba4.jpg?size=996x2160&quality=95&sign=73d57cd2d788d0b76b35664e6b9596bb&type=album">
