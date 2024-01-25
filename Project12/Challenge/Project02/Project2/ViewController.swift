@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
-    var questionsAsked = 0
+    var questionsAsked = 1
     var scoreOfTheGame = UILabel()
+    var highestScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +64,16 @@ class ViewController: UIViewController {
         }
         questionsAsked += 1
         
-        if questionsAsked == 10 {
+        if questionsAsked == 11 {
             ac = UIAlertController(title: "Game over!", message: "Your score is \(score)", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Restart?", style: .default, handler: askQuestion))
-            questionsAsked = 0
+            questionsAsked = 1
+            if score > highestScore {
+                UserDefaults.standard.set(score, forKey: "highestScore")
+                highestScore = score
+                ac = UIAlertController(title: "Great job!", message: "You beat your previous record. Now the highest score is \(score)", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+            }
             score = 0
         } else {
             ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
