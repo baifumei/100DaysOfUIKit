@@ -10,13 +10,18 @@ import UIKit
 class ViewController: UITableViewController {
     var allWords = [String]()
     var usedWords = [String]()
+    
+    let LEFT_BAR_BUTTON_ITEM_TAG = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //add + in rightBarButtonItem
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(startGame))
+        
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(startGame))
+        leftBarButtonItem.tag = LEFT_BAR_BUTTON_ITEM_TAG
+        navigationItem.leftBarButtonItem = leftBarButtonItem
         
         //finding the path to start.txt file
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
@@ -31,12 +36,32 @@ class ViewController: UITableViewController {
             allWords = ["silkworm"]
         }
         
-        startGame()
+        if let savedWords =  UserDefaults.standard.object(forKey: "usedWords") as? Data {
+            do {
+                usedWords = try JSONDecoder().decode([String].self, from: savedWords)
+                tableView.reloadData()
+            } catch {
+                print("Failed to load the usedWords")
+            }
+        }
+        
+        startGame(UIBarButtonItem())
     }
 
-    @objc func startGame() {
-        title = allWords.randomElement()
-        usedWords.removeAll(keepingCapacity: true)
+    @objc func startGame(_ sender: UIBarButtonItem) {
+        title = sender.tag == LEFT_BAR_BUTTON_ITEM_TAG ? allWords.randomElement() : UserDefaults.standard.string(forKey: "lastWord") ?? allWords.randomElement()
+        UserDefaults.standard.set(title, forKey: "lastWord")
+
+        
+        if sender.tag == LEFT_BAR_BUTTON_ITEM_TAG {
+            usedWords.removeAll(keepingCapacity: true)
+            if let savedData = try? JSONEncoder().encode(usedWords) {
+                UserDefaults.standard.set(savedData, forKey: "usedWords")
+            } else {
+                print("Failed to save words")
+            }
+        }
+        
         tableView.reloadData()
     }
     
@@ -69,6 +94,11 @@ class ViewController: UITableViewController {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
                     usedWords.insert(answer, at: 0)
+                    if let savedData = try? JSONEncoder().encode(usedWords) {
+                        UserDefaults.standard.set(savedData, forKey: "usedWords")
+                    } else {
+                        print("Failed to save data")
+                    }
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
