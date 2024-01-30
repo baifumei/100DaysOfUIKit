@@ -8,7 +8,7 @@
 import CoreImage
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var intensity: UISlider!
     @IBOutlet var imageView: UIImageView!
@@ -77,7 +77,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     @IBAction func save(_ sender: Any) {
         guard let image = imageView.image else { return }
-        
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
