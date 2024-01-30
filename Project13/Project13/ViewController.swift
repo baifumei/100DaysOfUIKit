@@ -5,6 +5,7 @@
 //  Created by Екатерина К on 1/29/24.
 //
 
+import CoreImage
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -13,6 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     @IBOutlet var imageView: UIImageView!
     
     var currentImage: UIImage!
+    var context: CIContext!
+    var currentFilter: CIFilter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         //Yet Another Core Image Filters Program - YACIFP
         title = "Instafilter"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
+        
+        context = CIContext()
+        currentFilter = CIFilter(name: "CISepiaTone")
     }
     
     @objc func importPicture() {
@@ -33,6 +39,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         guard let image = info[.editedImage] as? UIImage else { return }
         dismiss(animated: true)
         currentImage = image
+        
+        let beginImage = CIImage(image: currentImage)
+        currentImage.setValue(beginImage, forKey: kCIInputImageKey)
+        applyProcessing()
     }
     
     @IBAction func changeFilter(_ sender: Any) {
@@ -40,8 +50,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     @IBAction func save(_ sender: Any) {
     }
     @IBAction func intensityChanged(_ sender: Any) {
+        applyProcessing()
     }
     
-
+    
 }
 
