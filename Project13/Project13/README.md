@@ -21,7 +21,7 @@
 ## Challenge
 
 - [x] Try making the Save button show an error if there was no image in the image view.
-- [ ] Make the Change Filter button change its title to show the name of the currently selected filter.
+- [x] Make the Change Filter button change its title to show the name of the currently selected filter.
 - [ ] Experiment with having more than one slider, to control each of the input keys you care about. For example, you might have one for radius and one for intensity.
 
-<img width="300" alt="P2" src="https://sun9-20.userapi.com/impg/wx-seko8q9XOz_8KBXBr_D8_nMyrd94dgfTj4w/MiG9oWnXzgs.jpg?size=996x2160&quality=95&sign=cad02dc8a62a2d4c710e151c04504f27&type=album">
+<img width="300" alt="P2" src="https://sun9-20.userapi.com/impg/wx-seko8q9XOz_8KBXBr_D8_nMyrd94dgfTj4w/MiG9oWnXzgs.jpg?size=996x2160&quality=95&sign=cad02dc8a62a2d4c710e151c04504f27&type=album"> <img width="300" alt="P2" src="https://sun9-24.userapi.com/impg/vr3ZZNwz7t4VEM16aIS4005gwNNTlJIlYrIXhg/Kn2bCoip8LA.jpg?size=996x2160&quality=95&sign=af060190ffabe65868ab98b7c1175b08&type=album"> 
