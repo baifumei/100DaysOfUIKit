@@ -86,6 +86,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="7Pm-qA-mVt"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="scageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xsA-0x-iCH"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-jY-iaX">
                                 <rect key="frame" x="20" y="750" width="70" height="21"/>
@@ -98,6 +101,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dEm-GH-TjU">
                                 <rect key="frame" x="106" y="745" width="290" height="30"/>
+                                <connections>
+                                    <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="NID-eL-BFk"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -136,6 +142,8 @@
                     <connections>
                         <outlet property="imageView" destination="YN3-0H-BBv" id="IPj-4J-dDh"/>
                         <outlet property="intensity" destination="RYY-UG-y0b" id="QOf-S7-FoG"/>
+                        <outlet property="radius" destination="dEm-GH-TjU" id="5W5-6l-7Lw"/>
+                        <outlet property="scale" destination="ta8-oK-tkX" id="oOz-cj-nUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
