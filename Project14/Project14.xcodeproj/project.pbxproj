@@ -25,6 +25,8 @@
 		E131DC522B6A54C800900D36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E131DC542B6A54C900900D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E131DC572B6A54C900900D36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E131DC602B6A591300900D36 /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		E131DC612B6A591300900D36 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,8 @@
 				E131DC512B6A54C800900D36 /* Main.storyboard */,
 				E131DC542B6A54C900900D36 /* Assets.xcassets */,
 				E131DC562B6A54C900900D36 /* LaunchScreen.storyboard */,
+				E131DC612B6A591300900D36 /* whack.caf */,
+				E131DC602B6A591300900D36 /* whackBad.caf */,
 			);
 			path = Project14;
 			sourceTree = "<group>";
