@@ -10,6 +10,8 @@ import SpriteKit
 class GameScene: SKScene {
     var slots = [WhackSlot]()
     
+    var popupTime = 0.85
+    
     var gameScore: SKLabelNode!
     var score = 0 {
         didSet {
