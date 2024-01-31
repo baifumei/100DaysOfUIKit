@@ -21,6 +21,13 @@ class GameScene: SKScene {
         background.blendMode = .replace
         background.zPosition = -1
         addChild(background)
+        
+        gameScore = SKLabelNode(fontNamed: "Chalkduster")
+        gameScore.text = "Score: \(score)"
+        gameScore.fontSize = 48
+        gameScore.position = CGPoint(x: 8, y: 8)
+        gameScore.horizontalAlignmentMode = .left
+        addChild(gameScore)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
