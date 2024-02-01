@@ -18,6 +18,7 @@
 		E131DC652B6A9E5A00900D36 /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = E131DC602B6A591300900D36 /* whackBad.caf */; };
 		E131DC662B6A9E9300900D36 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = E131DC612B6A591300900D36 /* whack.caf */; };
 		E131DC682B6AA04F00900D36 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E131DC672B6AA04F00900D36 /* README.md */; };
+		E131DC6A2B6C072200900D36 /* George’s voice.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E131DC692B6C072200900D36 /* George’s voice.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E131DC612B6A591300900D36 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
 		E131DC622B6A68DA00900D36 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 		E131DC672B6AA04F00900D36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E131DC692B6C072200900D36 /* George’s voice.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "George’s voice.m4a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				E131DC562B6A54C900900D36 /* LaunchScreen.storyboard */,
 				E131DC612B6A591300900D36 /* whack.caf */,
 				E131DC602B6A591300900D36 /* whackBad.caf */,
+				E131DC692B6C072200900D36 /* George’s voice.m4a */,
 			);
 			path = Project14;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				E131DC552B6A54C900900D36 /* Assets.xcassets in Resources */,
 				E131DC682B6AA04F00900D36 /* README.md in Resources */,
 				E131DC582B6A54C900900D36 /* LaunchScreen.storyboard in Resources */,
+				E131DC6A2B6C072200900D36 /* George’s voice.m4a in Resources */,
 				E131DC652B6A9E5A00900D36 /* whackBad.caf in Resources */,
 				E131DC662B6A9E9300900D36 /* whack.caf in Resources */,
 			);
