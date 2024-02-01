@@ -14,6 +14,8 @@ class GameScene: SKScene {
     var numRounds = 0
     
     var gameScore: SKLabelNode!
+    var finalScore: SKLabelNode!
+    
     var score = 0 {
         didSet {
             gameScore.text = "Score: \(score)"
@@ -91,9 +93,16 @@ class GameScene: SKScene {
             }
             
             let gameOver = SKSpriteNode(imageNamed: "gameOver")
-            run(SKAction.playSoundFileNamed("George’s voice.m4a", waitForCompletion: false))
             gameOver.position = CGPoint(x: 512, y: 384)
             gameOver.zPosition = 1
+            
+            finalScore = SKLabelNode(fontNamed: "AvenirNext-Bold")
+            finalScore.text = "Your final score is \(score)"
+            finalScore.position = CGPoint(x: 0, y: -60)
+            finalScore.zPosition = 1
+            
+            run(SKAction.playSoundFileNamed("George’s voice.m4a", waitForCompletion: false))
+            gameOver.addChild(finalScore)
             addChild(gameOver)
             return
         }
