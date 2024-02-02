@@ -14,4 +14,4 @@
 - [x] When showing “Game Over” add an SKLabelNode showing their final score.
 - [ ] Use SKEmitterNode to create a smoke-like effect when penguins are hit, and a separate mud-like effect when they go into or come out of a hole.
 
-<img width="500" alt="P2" src="https://sun9-34.userapi.com/impg/4LYWwTCOnUdDUv00veQGrFJoeefXhWoBhr5fDA/whU0bd35j2Y.jpg?size=2224x1668&quality=95&sign=008a769fee75e2284325cd55aef94dad&type=album">
+<img width="500" alt="P2" src="https://sun9-34.userapi.com/impg/4LYWwTCOnUdDUv00veQGrFJoeefXhWoBhr5fDA/whU0bd35j2Y.jpg?size=2224x1668&quality=95&sign=008a769fee75e2284325cd55aef94dad&type=album"> <img width="500" alt="P2" src="https://sun9-11.userapi.com/impg/OEIHyQjolHFqK9uHkEehbb_JgMpgqBx3oueDNw/x6uN-YcvV7k.jpg?size=2224x1668&quality=96&sign=f43715184c6c392923489c71e94f3b83&type=album">

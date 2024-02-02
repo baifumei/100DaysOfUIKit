@@ -72,6 +72,13 @@ class WhackSlot: SKNode {
         let hide = SKAction.moveBy(x: 0, y: -80, duration: 0.5)
         let notVisible = SKAction.run { [weak self] in self?.isVisible = false }
         let sequence = SKAction.sequence([delay, hide, notVisible])
+        
+        if let smokeEffect = SKEmitterNode(fileNamed: "SmokeLikeEffect") {
+            smokeEffect.position = charNode.position
+            smokeEffect.zPosition = 1
+            addChild(smokeEffect)
+        }
+        
         charNode.run(sequence)
     }
 }
