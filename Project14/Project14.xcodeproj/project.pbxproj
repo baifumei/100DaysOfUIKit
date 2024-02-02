@@ -19,6 +19,8 @@
 		E131DC662B6A9E9300900D36 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = E131DC612B6A591300900D36 /* whack.caf */; };
 		E131DC682B6AA04F00900D36 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E131DC672B6AA04F00900D36 /* README.md */; };
 		E131DC6A2B6C072200900D36 /* George’s voice.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E131DC692B6C072200900D36 /* George’s voice.m4a */; };
+		E131DC6C2B6CFD6000900D36 /* SmokeLikeEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = E131DC6B2B6CFD6000900D36 /* SmokeLikeEffect.sks */; };
+		E131DC702B6D01F800900D36 /* Mud.sks in Resources */ = {isa = PBXBuildFile; fileRef = E131DC6F2B6D01F800900D36 /* Mud.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		E131DC622B6A68DA00900D36 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 		E131DC672B6AA04F00900D36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E131DC692B6C072200900D36 /* George’s voice.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "George’s voice.m4a"; sourceTree = "<group>"; };
+		E131DC6B2B6CFD6000900D36 /* SmokeLikeEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeLikeEffect.sks; sourceTree = "<group>"; };
+		E131DC6F2B6D01F800900D36 /* Mud.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mud.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				E131DC672B6AA04F00900D36 /* README.md */,
 				E131DC4F2B6A54C800900D36 /* GameViewController.swift */,
 				E131DC622B6A68DA00900D36 /* WhackSlot.swift */,
+				E131DC6B2B6CFD6000900D36 /* SmokeLikeEffect.sks */,
+				E131DC6F2B6D01F800900D36 /* Mud.sks */,
 				E131DC512B6A54C800900D36 /* Main.storyboard */,
 				E131DC542B6A54C900900D36 /* Assets.xcassets */,
 				E131DC562B6A54C900900D36 /* LaunchScreen.storyboard */,
@@ -147,8 +153,10 @@
 				E131DC682B6AA04F00900D36 /* README.md in Resources */,
 				E131DC582B6A54C900900D36 /* LaunchScreen.storyboard in Resources */,
 				E131DC6A2B6C072200900D36 /* George’s voice.m4a in Resources */,
+				E131DC702B6D01F800900D36 /* Mud.sks in Resources */,
 				E131DC652B6A9E5A00900D36 /* whackBad.caf in Resources */,
 				E131DC662B6A9E9300900D36 /* whack.caf in Resources */,
+				E131DC6C2B6CFD6000900D36 /* SmokeLikeEffect.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
