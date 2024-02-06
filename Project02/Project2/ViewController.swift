@@ -44,6 +44,11 @@ class ViewController: UIViewController {
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5) {
+            self.button1.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.button2.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.button3.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
         title = countries[correctAnswer].uppercased() + " " + "\(questionsAsked)/10"
         
     }
@@ -52,6 +57,9 @@ class ViewController: UIViewController {
         var title: String
         var ac: UIAlertController
         
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5) {
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
