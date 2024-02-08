@@ -55,11 +55,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         guard let capital = view.annotation as? Capital else { return }
         
         let placeName = capital.title
-        let placeInfo = capital.info
         
-        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
-        present(ac, animated: true)
+        let vc = DetailViewController()
+        vc.city = placeName
+        navigationController?.pushViewController(vc, animated: true)
+        
+//        let placeInfo = capital.info
+//        
+//        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
+//        ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
+//        present(ac, animated: true)
     }
     
     @objc func chooseMapType() {
