@@ -13,6 +13,7 @@
 		E131DCA92B73DC4E00900D36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E131DCA72B73DC4E00900D36 /* Main.storyboard */; };
 		E131DCAB2B73DC4E00900D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E131DCAA2B73DC4E00900D36 /* Assets.xcassets */; };
 		E131DCAE2B73DC4E00900D36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E131DCAC2B73DC4E00900D36 /* LaunchScreen.storyboard */; };
+		E177AC652B7503C70093E2B8 /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177AC642B7503C70093E2B8 /* Capital.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E131DCAA2B73DC4E00900D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E131DCAD2B73DC4E00900D36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E131DCAF2B73DC4E00900D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E177AC642B7503C70093E2B8 /* Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E131DCA12B73DC4E00900D36 /* AppDelegate.swift */,
 				E131DCA32B73DC4E00900D36 /* SceneDelegate.swift */,
 				E131DCA52B73DC4E00900D36 /* ViewController.swift */,
+				E177AC642B7503C70093E2B8 /* Capital.swift */,
 				E131DCA72B73DC4E00900D36 /* Main.storyboard */,
 				E131DCAA2B73DC4E00900D36 /* Assets.xcassets */,
 				E131DCAC2B73DC4E00900D36 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				E131DCA62B73DC4E00900D36 /* ViewController.swift in Sources */,
 				E131DCA22B73DC4E00900D36 /* AppDelegate.swift in Sources */,
+				E177AC652B7503C70093E2B8 /* Capital.swift in Sources */,
 				E131DCA42B73DC4E00900D36 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
