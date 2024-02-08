@@ -11,11 +11,13 @@ import MapKit
 class ViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet var mapView: MKMapView!
-    
+//    var mapTypeChosen: MKMapType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mapView.mapType = .satellite
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(chooseMapType))
+        
         
         let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics.")
         let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "Founded over a thousand years ago.")
@@ -57,6 +59,29 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Ok", style: .cancel))
+        present(ac, animated: true)
+    }
+    
+    @objc func chooseMapType() {
+        let ac = UIAlertController(title: "What view of the map do you prefer?", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "satellite", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .satellite
+        }))
+        ac.addAction(UIAlertAction(title: "satellite Flyover", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .satelliteFlyover
+        }))
+        ac.addAction(UIAlertAction(title: "hybrid", style: .default, handler:{ [weak self] _ in
+            self?.mapView.mapType = .hybrid
+        }))
+        ac.addAction(UIAlertAction(title: "hybrid Flyover", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .hybridFlyover
+        }))
+        ac.addAction(UIAlertAction(title: "muted Standard", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .mutedStandard
+        }))
+        ac.addAction(UIAlertAction(title: "standard", style: .default, handler: { [weak self] _ in
+            self?.mapView.mapType = .standard
+        }))
         present(ac, animated: true)
     }
 }
