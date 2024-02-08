@@ -34,7 +34,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
         if annotationView == nil {
-            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            let markerAnnotation = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            markerAnnotation.markerTintColor = .blue
+            
+            annotationView = markerAnnotation
             annotationView?.canShowCallout = true
             
             let button = UIButton(type: .detailDisclosure)

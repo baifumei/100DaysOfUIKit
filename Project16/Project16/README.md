@@ -18,6 +18,8 @@ If you wanna choose from multiple map styles, such as satellite maps, you need t
 
 ## Challenge
 
-- [ ] Try typecasting the return value from dequeueReusableAnnotationView() so that it's an MKPinAnnotationView. Once that’s done, change the pinTintColor property to your favorite UIColor.
+- [x] Try typecasting the return value from dequeueReusableAnnotationView() so that it's an MKPinAnnotationView. Once that’s done, change the pinTintColor property to your favorite UIColor.
 - [ ] Add a UIAlertController that lets users specify how they want to view the map. There's a mapType property that draws the maps in different ways. For example, .satellite gives a satellite view of the terrain.
 - [ ] Modify the callout button so that pressing it shows a new view controller with a web view, taking users to the Wikipedia entry for that city.
+
+<img width="300" alt="P2" src="https://sun9-35.userapi.com/impg/tLjP-ZaMn9U2KNH2P-Zogw3LhbY87vUXg4xUCQ/OvF-X8vC2Lw.jpg?size=828x1792&quality=95&sign=c2e48ac77e619c163c5dd37b1ab4f541&type=album"> 
