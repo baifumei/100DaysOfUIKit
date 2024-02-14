@@ -77,4 +77,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             score += 1
         }
     }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        var location = touch.location(in: self)
+        
+        if location.y < 100 {
+            location.y = 100
+        } else if location.y > 660 {
+            location.y = 600
+        }
+        player.position = location
+    }
 }
