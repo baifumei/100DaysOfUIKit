@@ -88,4 +88,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         player.position = location
     }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let explosion = SKEmitterNode(fileNamed: "explosion")!
+        
+        explosion.position = player.position
+        addChild(explosion)
+        
+        player.removeFromParent()
+        
+        isGameOver = true
+    }
 }
