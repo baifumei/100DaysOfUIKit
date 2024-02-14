@@ -20,7 +20,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var possibleEnemies = ["ball", "hammer", "tv"]
     var gameTimer: Timer?
-    var isGameOver = false
+    
+    var isGameOver = false {
+        didSet {
+            if isGameOver {
+                let gameOverLable = SKSpriteNode(imageNamed: "gameOver")
+                gameOverLable.position = CGPoint(x: 512, y: 384)
+                gameOverLable.zPosition = 2
+                addChild(gameOverLable)
+            }
+        }
+    }
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -91,6 +101,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.position = location
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        isGameOver = true
+    }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         let explosion = SKEmitterNode(fileNamed: "explosion")!
         
@@ -100,11 +114,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.removeFromParent()
         
         isGameOver = true
-        if isGameOver {
-            let gameOverLable = SKSpriteNode(imageNamed: "gameOver")
-            gameOverLable.position = CGPoint(x: 512, y: 384)
-            gameOverLable.zPosition = 2
-            addChild(gameOverLable)
-        }
     }
 }

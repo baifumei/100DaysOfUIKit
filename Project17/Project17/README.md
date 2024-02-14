@@ -12,8 +12,8 @@
 
 ## Challenge
 
-- [ ] Stop the player from cheating by lifting their finger and tapping elsewhere – try implementing touchesEnded() to make it work.
+- [x] Stop the player from cheating by lifting their finger and tapping elsewhere – try implementing touchesEnded() to make it work.
 - [ ] Make the timer start at one second, but then after 20 enemies have been made subtract 0.1 seconds from it so it’s triggered every 0.9 seconds. After making 20 more, subtract another 0.1, and so on. Note: you should call invalidate() on gameTimer before giving it a new value, otherwise you end up with multiple timers.
 - [x] Stop creating space debris after the player has died.
 
- <img width="500" alt="P2" src=""> <img width="500" alt="P2" src=""> <img width="500" alt="P2" src="https://vk.com/im?sel=195760655&z=photo195760655_457246611%2Fmail591717">
+ <img width="500" alt="P2" src="https://sun9-80.userapi.com/impg/BjpzUX_4ZOJLN7KatxIpC2mYWAvwRhxjn8Jqsg/Xumr4OwATIM.jpg?size=2224x1668&quality=95&sign=db0807251092d892c6cc15894951c1a1&type=album">
