@@ -18,6 +18,7 @@
 		E177AD012B7E2C6C0093E2B8 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177AD002B7E2C6C0093E2B8 /* ActionViewController.swift */; };
 		E177AD042B7E2C6C0093E2B8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E177AD022B7E2C6C0093E2B8 /* MainInterface.storyboard */; };
 		E177AD082B7E2C6C0093E2B8 /* Extention.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E177ACF92B7E2C6C0093E2B8 /* Extention.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E177AD0E2B7E31D80093E2B8 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = E177AD0D2B7E31D80093E2B8 /* Action.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E177AD002B7E2C6C0093E2B8 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		E177AD032B7E2C6C0093E2B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E177AD052B7E2C6C0093E2B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E177AD0D2B7E31D80093E2B8 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				E177AD002B7E2C6C0093E2B8 /* ActionViewController.swift */,
 				E177AD022B7E2C6C0093E2B8 /* MainInterface.storyboard */,
 				E177AD052B7E2C6C0093E2B8 /* Info.plist */,
+				E177AD0D2B7E31D80093E2B8 /* Action.js */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E177AD0E2B7E31D80093E2B8 /* Action.js in Resources */,
 				E177ACFF2B7E2C6C0093E2B8 /* Media.xcassets in Resources */,
 				E177AD042B7E2C6C0093E2B8 /* MainInterface.storyboard in Resources */,
 			);
