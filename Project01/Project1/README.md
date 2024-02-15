@@ -21,3 +21,9 @@ The changes progress of ViewController:
 The changes progress of DetailViewController:
 
 <img width="300" alt="P2" src="https://sun9-2.userapi.com/impg/mzgqGbFQya4vUZgXHQh-bh2ZP8vFuwUcX3ybrA/FNtNIjr1zDY.jpg?size=640x1380&quality=96&sign=c19e7f575a22050a2c1b2784afab9d6d&type=album"> <img width="300" alt="P2" src="https://sun9-12.userapi.com/impg/tmAgchrH70E_rwt3gihrQkGqpcSzXlp9FbAlvg/UGLJAmwJZyw.jpg?size=640x1380&quality=96&sign=3b21e5ce7d26d8300a3be261e7740f9c&type=album"> <img width="300" alt="P2" src="https://sun9-45.userapi.com/impg/ZIJ50Uv5yjyPoojH6n7zZerBYzor0nKfFE_rxA/YLgszyIqFNk.jpg?size=640x1380&quality=96&sign=5796735d7ed8b336c7a1d667b8770319&type=album"> <img width="300" alt="P2" src="https://sun9-45.userapi.com/impg/9Z2vuxTcn95RIYW8S_8EZfEWMD1NMoXhxYpiWw/kLGbiaxVYqo.jpg?size=640x1380&quality=96&sign=3acf4911aa389865c43ae5710c40f2e3&type=album">
+
+## Challenge from project 18:
+
+- [x] Temporarily try adding an exception breakpoint to project 1, then changing the call to instantiateViewController() so that it uses the storyboard identifier “Bad” – this will fail, but your exception breakpoint should catch it.
+- [ ] In project 1, add a call to assert() in the viewDidLoad() method of DetailViewController.swift, checking that selectedImage always has a value.
+

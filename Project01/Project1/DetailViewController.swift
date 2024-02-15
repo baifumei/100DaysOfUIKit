@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
+        assert(selectedImage != nil, "No, the selectedImage  hasn't a value!")
     }
     
     override func viewWillAppear(_ animated: Bool) {
