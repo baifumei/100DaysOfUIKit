@@ -61,6 +61,7 @@
 		E177AD772B7E87330093E2B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E177AD792B7E87330093E2B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E177AD812B7E89620093E2B8 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		E17CE4402B83878700652E59 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Project19/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 		E177AD492B7E860C0093E2B8 = {
 			isa = PBXGroup;
 			children = (
+				E17CE4402B83878700652E59 /* README.md */,
 				E177AD542B7E860C0093E2B8 /* Project19 */,
 				E177AD712B7E87330093E2B8 /* Extension */,
 				E177AD6E2B7E87330093E2B8 /* Frameworks */,
