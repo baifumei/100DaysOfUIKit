@@ -29,7 +29,11 @@ class GameScene: SKScene {
         background.zPosition = -1
         addChild(background)
         
-        scoreLabel = SKLabelNode(text: "Score: 0")
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.text = "Score: \(score)"
+        scoreLabel.position = CGPoint(x: 90, y: 50)
+        scoreLabel.fontSize = 24
+        scoreLabel.zPosition = 1
         addChild(scoreLabel)
         
         gameTimer = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(launchFireworks), userInfo: nil, repeats: true)
