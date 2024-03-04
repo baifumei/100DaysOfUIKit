@@ -21,6 +21,23 @@ class GameScene: SKScene {
             scoreLabel.text = "Score: \(score)"
         }
     }
+    var launchesCounts: SKLabelNode!
+    var launchesCount: Int = 0 {
+        didSet {
+            launchesCounts.text = "launchesCount: \(launchesCount)"
+        }
+    }
+    
+    var isGameOver = false {
+        didSet {
+            if isGameOver {
+                let gameOver = SKSpriteNode(imageNamed: "gameOver")
+                gameOver.position = CGPoint(x: 512, y: 384)
+                gameOver.zPosition = 1
+                addChild(gameOver)
+            }
+        }
+    }
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
@@ -72,6 +89,15 @@ class GameScene: SKScene {
         addChild(node)
     }
     
+    func stopGame() {
+        guard let timer = gameTimer else { return }
+        
+        timer.invalidate()
+        gameTimer = nil
+        
+        isGameOver = true
+    }
+    
     @objc func launchFireworks() {
         let movementAmount: CGFloat = 1800
         
@@ -99,6 +125,7 @@ class GameScene: SKScene {
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge + 200)
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge + 100)
             createFirework(xMovement: movementAmount, x: leftEdge, y: bottomEdge)
+        
         case 3:
             //from the right to the left
             createFirework(xMovement: -movementAmount, x: rightEdge, y: bottomEdge + 400)
@@ -151,6 +178,10 @@ class GameScene: SKScene {
                 fireworks.remove(at: index)
                 firework.removeFromParent()
             }
+        }
+        
+        if score > 1000 {
+            stopGame()
         }
     }
     

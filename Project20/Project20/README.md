@@ -13,5 +13,7 @@
 ## Challenge
 
 - [x] For an easy challenge try adding a score label that updates as the player’s score changes.
-- [ ] Make the game end after a certain number of launches. You will need to use the invalidate() method of Timer to stop it from repeating.
+- [x] Make the game end after a certain number of launches. You will need to use the invalidate() method of Timer to stop it from repeating.
 - [ ] Use the waitForDuration and removeFromParent actions in a sequence to make sure explosion particle emitters are removed from the game scene when they are finished.
+
+<img width="500" alt="P2" src="https://sun9-20.userapi.com/impg/Txt_5HFUKfbk78pC1-0lWjV-_42kkl2fa77Fag/RU21WCLxwLw.jpg?size=2360x1640&quality=95&sign=b2ca42b645e22fff849fd8a3145d4f7c&type=album">
