@@ -65,5 +65,27 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
         center.setNotificationCategories([category])
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let customData = userInfo["customData"] as? String {
+            print("customData: \(customData)")
+            
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                print("Default identifier")
+
+            case "show":
+                // the user tapped our "show more info…" button
+                print("Show more information…")
+
+            default:
+                break
+            }
+        }
+        completionHandler()
+    }
 }
 
