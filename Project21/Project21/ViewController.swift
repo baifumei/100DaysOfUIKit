@@ -9,7 +9,7 @@ import UIKit
 import UserNotifications
 
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
-
+    var is24hours = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +50,14 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         dateComponents.minute = 30
         
 //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        var timeInterval: Double
+        if is24hours {
+            timeInterval = 86400
+        } else {
+            timeInterval = 5
+        }
         
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         center.add(request)
@@ -62,7 +68,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         center.delegate = self
         
         let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+        let delay = UNNotificationAction(identifier: "delay", title: "Remind me later", options: .foreground)
+
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show, delay], intentIdentifiers: [])
         center.setNotificationCategories([category])
     }
     
@@ -88,7 +96,19 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
                 
                 // the user tapped our "show more info…" button
                 print("Show more information…")
-
+                
+            case "delay":
+                let action = UIAlertController(title: "ALARM!!!", message: "Are you sure that you want to put it off for 24 hours?", preferredStyle: .alert)
+                action.addAction(UIAlertAction(title: "yes", style: .default))
+                present(action, animated: true)
+                
+                    // the user tapped our "Remind me later" button
+                print("Remind me later")
+                
+                is24hours = true
+                scheduleLocal()
+                is24hours = false
+                
             default:
                 break
             }
