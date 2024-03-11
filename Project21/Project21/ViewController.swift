@@ -74,10 +74,18 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
+                let action = UIAlertController(title: "ALARM!!!", message: "You've opened the most wonderful notification", preferredStyle: .alert)
+                action.addAction(UIAlertAction(title: "continue", style: .default))
+                present(action, animated: true)
+                
                 // the user swiped to unlock
                 print("Default identifier")
 
             case "show":
+                let action = UIAlertController(title: "ALARM!!!", message: "Are you sure that you want to read it?", preferredStyle: .alert)
+                action.addAction(UIAlertAction(title: "yes", style: .default))
+                present(action, animated: true)
+                
                 // the user tapped our "show more info…" button
                 print("Show more information…")
 
