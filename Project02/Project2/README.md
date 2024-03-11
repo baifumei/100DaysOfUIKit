@@ -21,3 +21,9 @@
 - [x] When someone chooses the wrong flag, tell them their mistake in your alert message.
 
 <img width="300" alt="P2" src="https://sun9-45.userapi.com/impg/FQiRSfMWWRSD8QnIYIJlbJymNc0d_W6BG5Zgrw/sBoj_SDe43w.jpg?size=660x1380&quality=96&sign=2df5f02d477233cd404af11c11e0c9c7&type=album"> <img width="300" alt="P2" src="https://sun9-49.userapi.com/impg/yeEKvOTyeuEMgHBVah7V5iu0x7PMb6bN7Lii-g/GMlmKy_nxAQ.jpg?size=660x1380&quality=96&sign=909b3a3e5d7f559fa6cc7d692dbad813&type=album"> <img width="300" alt="P2" src="https://sun6-23.userapi.com/impg/KlpTAeEpPEEt208m_gKJJQyXpV2C_KFlRR_XVA/-wWkGw3LIEw.jpg?size=660x1380&quality=96&sign=444674eb433a8ef36644e4d0883c3964&type=album">
+
+## Chalenge 3 from the project21:
+
+- [x] And for an even harder challenge, update project 2 so that it reminds players to come back and play every day. This means scheduling a week of notifications ahead of time, each of which launch the app. When the app is finally launched, make sure you call removeAllPendingNotificationRequests() to clear any un-shown alerts, then make new alerts for future days.
+
+<img width="300" alt="P2" src="https://sun9-35.userapi.com/impg/7Iz63NO6sCdcjGEWQd750ifC558av_s8jNkCPw/AezO9ZLXWR0.jpg?size=996x2160&quality=95&sign=bb250fa1a24ee992c804ad36a0b2e65e&type=album"> <img width="300" alt="P2" src="https://sun9-43.userapi.com/impg/Tfr_QE_b4pdF7fjREw9CsKDbE5qpbYagrSBrtg/SadjVF06LDo.jpg?size=996x2160&quality=95&sign=0daabb7b01d3434ce08c5b11c015456b&type=album">

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import UserNotifications
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UNUserNotificationCenterDelegate {
 
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!    
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         button3.layer.borderColor = UIColor.lightGray.cgColor
 
         askQuestion()
+        registerNotification()
     }
 
     func askQuestion(action: UIAlertAction! = nil) {
@@ -90,5 +92,48 @@ class ViewController: UIViewController {
         alertControll.addAction(UIAlertAction(title: "continue", style: .default))
         present(alertControll, animated: true)
     }
+    
+    func registerNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted , error) in
+            if granted {
+//                center.removeAllPendingNotificationRequests()
+                center.delegate = self
+                let content = UNMutableNotificationContent()
+                content.title = "Do you know this flag?"
+                content.body = "New daily challenge is available"
+                content.categoryIdentifier = "alarm"
+                content.userInfo = ["customData": "fizzbuzz"]
+                content.sound = .defaultRingtone
+                //86400
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                center.add(request)
+            } else {
+                print("no")
+            }
+        }
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let customData = userInfo["customData"] as? String {
+            print("customData: \(customData)")
+            
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                print("Default identifier")
+                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                registerNotification()
+            default:
+                print("break")
+                break
+            }
+        }
+        completionHandler()
+    }
+    
 }
 
