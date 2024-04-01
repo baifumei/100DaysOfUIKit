@@ -21,7 +21,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         view.backgroundColor = .gray
     }
-
-
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        if status == .authorizedAlways {
+            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                    
+                }
+            }
+        }
+    }
+    func startScacicng() {
+        let uuid = UUID(uuidString: "5A4BCFCE-174E-4BAC-A814-092E77F6B7E5")!
+        let beaconLocation = CLBeaconRegion(uuid: uuid,  major: 123, minor: 456, identifier: "MyBeacon")
+    }
 }
 
