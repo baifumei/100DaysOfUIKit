@@ -14,6 +14,17 @@
 		E18C7E8B2BBA6A72006C8B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E892BBA6A72006C8B53 /* Main.storyboard */; };
 		E18C7E8D2BBA6A74006C8B53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E8C2BBA6A74006C8B53 /* Assets.xcassets */; };
 		E18C7E902BBA6A74006C8B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E8E2BBA6A74006C8B53 /* LaunchScreen.storyboard */; };
+		E18C7EA02BBA6CA8006C8B53 /* sliceHitEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E962BBA6CA8006C8B53 /* sliceHitEnemy.sks */; };
+		E18C7EA12BBA6CA8006C8B53 /* swoosh3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E972BBA6CA8006C8B53 /* swoosh3.caf */; };
+		E18C7EA22BBA6CA8006C8B53 /* sliceHitBomb.sks in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E982BBA6CA8006C8B53 /* sliceHitBomb.sks */; };
+		E18C7EA32BBA6CA8006C8B53 /* swoosh1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E992BBA6CA8006C8B53 /* swoosh1.caf */; };
+		E18C7EA42BBA6CA8006C8B53 /* sliceFuse.sks in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9A2BBA6CA8006C8B53 /* sliceFuse.sks */; };
+		E18C7EA52BBA6CA8006C8B53 /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9B2BBA6CA8006C8B53 /* whack.caf */; };
+		E18C7EA62BBA6CA8006C8B53 /* launch.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9C2BBA6CA8006C8B53 /* launch.caf */; };
+		E18C7EA72BBA6CA8006C8B53 /* swoosh2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9D2BBA6CA8006C8B53 /* swoosh2.caf */; };
+		E18C7EA82BBA6CA8006C8B53 /* wrong.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9E2BBA6CA8006C8B53 /* wrong.caf */; };
+		E18C7EA92BBA6CA8006C8B53 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9F2BBA6CA8006C8B53 /* explosion.caf */; };
+		E18C7EAB2BBA6CC0006C8B53 /* sliceBombFuse.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7EAA2BBA6CC0006C8B53 /* sliceBombFuse.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +36,17 @@
 		E18C7E8A2BBA6A72006C8B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E18C7E8C2BBA6A74006C8B53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E18C7E8F2BBA6A74006C8B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E18C7E962BBA6CA8006C8B53 /* sliceHitEnemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitEnemy.sks; sourceTree = "<group>"; };
+		E18C7E972BBA6CA8006C8B53 /* swoosh3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh3.caf; sourceTree = "<group>"; };
+		E18C7E982BBA6CA8006C8B53 /* sliceHitBomb.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceHitBomb.sks; sourceTree = "<group>"; };
+		E18C7E992BBA6CA8006C8B53 /* swoosh1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh1.caf; sourceTree = "<group>"; };
+		E18C7E9A2BBA6CA8006C8B53 /* sliceFuse.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = sliceFuse.sks; sourceTree = "<group>"; };
+		E18C7E9B2BBA6CA8006C8B53 /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		E18C7E9C2BBA6CA8006C8B53 /* launch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = launch.caf; sourceTree = "<group>"; };
+		E18C7E9D2BBA6CA8006C8B53 /* swoosh2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = swoosh2.caf; sourceTree = "<group>"; };
+		E18C7E9E2BBA6CA8006C8B53 /* wrong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.caf; sourceTree = "<group>"; };
+		E18C7E9F2BBA6CA8006C8B53 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
+		E18C7EAA2BBA6CC0006C8B53 /* sliceBombFuse.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sliceBombFuse.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +86,17 @@
 				E18C7E892BBA6A72006C8B53 /* Main.storyboard */,
 				E18C7E8C2BBA6A74006C8B53 /* Assets.xcassets */,
 				E18C7E8E2BBA6A74006C8B53 /* LaunchScreen.storyboard */,
+				E18C7E9F2BBA6CA8006C8B53 /* explosion.caf */,
+				E18C7E9C2BBA6CA8006C8B53 /* launch.caf */,
+				E18C7E9A2BBA6CA8006C8B53 /* sliceFuse.sks */,
+				E18C7E982BBA6CA8006C8B53 /* sliceHitBomb.sks */,
+				E18C7E962BBA6CA8006C8B53 /* sliceHitEnemy.sks */,
+				E18C7E992BBA6CA8006C8B53 /* swoosh1.caf */,
+				E18C7E9D2BBA6CA8006C8B53 /* swoosh2.caf */,
+				E18C7E972BBA6CA8006C8B53 /* swoosh3.caf */,
+				E18C7E9B2BBA6CA8006C8B53 /* whack.caf */,
+				E18C7E9E2BBA6CA8006C8B53 /* wrong.caf */,
+				E18C7EAA2BBA6CC0006C8B53 /* sliceBombFuse.caf */,
 			);
 			path = Project23;
 			sourceTree = "<group>";
@@ -126,10 +159,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18C7EAB2BBA6CC0006C8B53 /* sliceBombFuse.caf in Resources */,
 				E18C7E8B2BBA6A72006C8B53 /* Main.storyboard in Resources */,
+				E18C7EA62BBA6CA8006C8B53 /* launch.caf in Resources */,
+				E18C7EA52BBA6CA8006C8B53 /* whack.caf in Resources */,
 				E18C7E822BBA6A72006C8B53 /* GameScene.sks in Resources */,
+				E18C7EA02BBA6CA8006C8B53 /* sliceHitEnemy.sks in Resources */,
 				E18C7E8D2BBA6A74006C8B53 /* Assets.xcassets in Resources */,
+				E18C7EA22BBA6CA8006C8B53 /* sliceHitBomb.sks in Resources */,
 				E18C7E902BBA6A74006C8B53 /* LaunchScreen.storyboard in Resources */,
+				E18C7EA92BBA6CA8006C8B53 /* explosion.caf in Resources */,
+				E18C7EA72BBA6CA8006C8B53 /* swoosh2.caf in Resources */,
+				E18C7EA12BBA6CA8006C8B53 /* swoosh3.caf in Resources */,
+				E18C7EA32BBA6CA8006C8B53 /* swoosh1.caf in Resources */,
+				E18C7EA42BBA6CA8006C8B53 /* sliceFuse.sks in Resources */,
+				E18C7EA82BBA6CA8006C8B53 /* wrong.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,8 +344,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +359,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -332,8 +376,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,7 +391,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
