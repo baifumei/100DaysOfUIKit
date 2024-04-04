@@ -320,7 +320,25 @@ class GameScene: SKScene {
     }
     
     func subtractLife() {
+        lives -= 1
         
+        run(SKAction.playSoundFileNamed("wrong.caf", waitForCompletion: false))
+        
+        var life: SKSpriteNode
+        
+        if lives == 2 {
+            life = livesImage[0]
+        } else if lives == 1 {
+            life = livesImage[1]
+        } else {
+            life = livesImage[2]
+            endGame()
+        }
+        
+        life.texture = SKTexture(imageNamed: "sliceLifeGone")
+        life.xScale = 1.3
+        life.yScale = 1.3
+        life.run(SKAction.scale(to: 1, duration: 0.1))
     }
     
     override func update(_ currentTime: TimeInterval) {
