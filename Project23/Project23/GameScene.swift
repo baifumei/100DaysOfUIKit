@@ -5,6 +5,7 @@
 //  Created by Екатерина К on 3/31/24.
 //
 
+import AVFAudio
 import SpriteKit
 
 enum ForceBomb {
@@ -30,6 +31,8 @@ class GameScene: SKScene {
     var isSwooshSoundActive = false
     
     var activeEnemies = [SKSpriteNode]()
+    
+    var bombSoundEffect: AVAudioPlayer?
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "sliceBackground")
@@ -164,6 +167,33 @@ class GameScene: SKScene {
         
         if enemyType == 0 {
             //bomb code
+            enemy = SKSpriteNode()
+            enemy.zPosition = 1
+            enemy.name = "bombContainer"
+            
+            let enemyImage = SKSpriteNode(imageNamed: "sliceBomb")
+            enemyImage.name = "bomb"
+            enemy.addChild(enemyImage)
+            
+            //звук бомбы остановить
+            if bombSoundEffect != nil {
+                bombSoundEffect?.stop()
+                bombSoundEffect = nil
+            }
+            
+            //запуск звука бомбы
+            if let path = Bundle.main.url(forResource: "sliceBombFuse", withExtension: ".caf") {
+                if let sound = try? AVAudioPlayer(contentsOf: path) {
+                    bombSoundEffect = sound
+                    sound.play()
+                }
+            }
+            
+            if let emitter = SKEmitterNode(fileNamed: "sliceFuse") {
+                emitter.position = CGPoint(x: 76, y: 64)
+                enemy.addChild(emitter)
+            }
+            
         } else {
             enemy = SKSpriteNode(imageNamed: "penguin")
             run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
@@ -173,7 +203,7 @@ class GameScene: SKScene {
         
         //начальная позиция врага перед запуском
         let randomPosition = CGPoint(x: Int.random(in: 64...960), y: -128)
-        enemy.position = randomPosition
+//        enemy.position = randomPosition
         
         //задаем угол наклона с которым полетит враг
         let randomAngularVelocity = CGFloat.random(in: -3...3)
@@ -198,9 +228,28 @@ class GameScene: SKScene {
         enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
         enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity, dy: randomYVelocity)
         enemy.physicsBody?.angularVelocity = randomAngularVelocity
+        
+        //не отскакивали друг от друга
         enemy.physicsBody?.collisionBitMask = 0
 
-//        addChild(enemy)
-//        activeEnemies.append(enemy)
+        addChild(enemy)
+        activeEnemies.append(enemy)
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        var bombCount = 0
+        
+        for node in activeEnemies {
+            if node.name == "bombContainer" {
+                bombCount += 1
+                break
+            }
+        }
+        
+        if bombCount == 0 {
+            bombSoundEffect?.stop()
+            bombSoundEffect = nil
+        }
+        
     }
 }
