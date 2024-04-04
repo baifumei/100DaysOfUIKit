@@ -44,6 +44,8 @@ class GameScene: SKScene {
     var chainDelay = 3.0
     var nextSequenceQueued = true
     
+    var isGameEnded = false
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "sliceBackground")
         background.position = CGPoint(x: 512, y: 384)
@@ -109,7 +111,10 @@ class GameScene: SKScene {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard isGameEnded == false else { return }
+        
         guard let touch = touches.first else { return }
+        
         let location = touch.location(in: self)
         activeSlicePoints.append(location)
         redrawActiveSlice()
@@ -171,13 +176,26 @@ class GameScene: SKScene {
                 }
                 run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
                 
-                endGame()
+                endGame(triggeredByBomb: true)
             }
         }
     }
     
-    func endGame() {
+    func endGame(triggeredByBomb: Bool) {
+        guard isGameEnded == false else { return }
         
+        isGameEnded = true
+        
+        physicsWorld.speed = 0
+        isUserInteractionEnabled = false
+        
+        bombSoundEffect?.stop()
+        bombSoundEffect = nil
+        if triggeredByBomb {
+                livesImage[0].texture = SKTexture(imageNamed: "sliceLifeGone")
+                livesImage[1].texture = SKTexture(imageNamed: "sliceLifeGone")
+                livesImage[2].texture = SKTexture(imageNamed: "sliceLifeGone")
+            }
     }
     
     func playSwooshSound() {
@@ -332,7 +350,7 @@ class GameScene: SKScene {
             life = livesImage[1]
         } else {
             life = livesImage[2]
-            endGame()
+            endGame(triggeredByBomb: false)
         }
         
         life.texture = SKTexture(imageNamed: "sliceLifeGone")
@@ -387,6 +405,8 @@ class GameScene: SKScene {
     }
     
     func tossEnemy() {
+        guard isGameEnded == false else { return }
+        
         popupTime *= 0.991
         chainDelay *= 0.99
         physicsWorld.speed *= 1.02
