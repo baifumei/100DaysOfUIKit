@@ -191,11 +191,18 @@ class GameScene: SKScene {
         
         bombSoundEffect?.stop()
         bombSoundEffect = nil
+        
         if triggeredByBomb {
-                livesImage[0].texture = SKTexture(imageNamed: "sliceLifeGone")
-                livesImage[1].texture = SKTexture(imageNamed: "sliceLifeGone")
-                livesImage[2].texture = SKTexture(imageNamed: "sliceLifeGone")
-            }
+            livesImage[0].texture = SKTexture(imageNamed: "sliceLifeGone")
+            livesImage[1].texture = SKTexture(imageNamed: "sliceLifeGone")
+            livesImage[2].texture = SKTexture(imageNamed: "sliceLifeGone")
+        }
+        
+        let gameOver = SKSpriteNode(imageNamed: "gameOver")
+        gameOver.position = CGPoint(x: 512, y: 386)
+        gameOver.zPosition = 4
+        
+        addChild(gameOver)
     }
     
     func playSwooshSound() {
