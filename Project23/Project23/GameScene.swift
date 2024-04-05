@@ -9,11 +9,11 @@ import AVFAudio
 import SpriteKit
 
 enum ForceBomb {
-    case never, always, random
+    case never, always, superForce, random
 }
 
 enum SequenceType: CaseIterable {
-    case oneNoBomb, one, twoWithOneBomb, two, three, four, chain, fastChain
+    case oneNoBomb, one, twoWithOneBomb, two, three, four, chain, fastChain, oneFastestEnemy
 }
 
 class GameScene: SKScene {
@@ -60,7 +60,7 @@ class GameScene: SKScene {
         createLives()
         createSlices()
         
-        sequence = [.oneNoBomb, .oneNoBomb, .twoWithOneBomb, .twoWithOneBomb, .three, .one, .chain]
+        sequence = [.oneNoBomb, .oneNoBomb, .oneFastestEnemy, .twoWithOneBomb, .twoWithOneBomb, .three, .one, .chain]
         
         for _ in 0...1000 {
             if let nextSequence = SequenceType.allCases.randomElement() {
@@ -177,6 +177,30 @@ class GameScene: SKScene {
                 run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
                 
                 endGame(triggeredByBomb: true)
+            } else if node.name == "forceEnemy" {
+                if let emitter = SKEmitterNode(fileNamed: "sliceHitEnemy") {
+                    emitter.position = node.position
+                    addChild(emitter)
+                }
+                
+                node.name = ""
+                node.physicsBody?.isDynamic = false
+                
+                let scaleOut = SKAction.scale(to: 0.001, duration: 0.2)
+                let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                let group = SKAction.group([scaleOut, fadeOut])
+                
+                let seq = SKAction.sequence([group, .removeFromParent()])
+                node.run(seq)
+                
+                score += 3
+                
+                if let index = activeEnemies.firstIndex(of: node) {
+                    activeEnemies.remove(at: index)
+                }
+                
+                run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
+                
             }
         }
     }
@@ -271,6 +295,8 @@ class GameScene: SKScene {
             enemyType = 1
         } else if forceBomb == .always {
             enemyType = 0
+        } else if forceBomb == .superForce {
+            enemyType = 2
         }
         
         if enemyType == 0 {
@@ -302,6 +328,19 @@ class GameScene: SKScene {
                 enemy.addChild(emitter)
             }
             
+        } else if enemyType == 2 {
+            enemy = SKSpriteNode(imageNamed: "penguin")
+            enemy.xScale = 1.5
+            enemy.yScale = 1.5
+            
+            if let emitter = SKEmitterNode(fileNamed: "sliceHitBomb") {
+                emitter.position = enemy.position
+                enemy.addChild(emitter)
+            }
+            
+            run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
+            
+            enemy.name = "forceEnemy"
         } else {
             enemy = SKSpriteNode(imageNamed: "penguin")
             run(SKAction.playSoundFileNamed("launch.caf", waitForCompletion: false))
@@ -383,6 +422,12 @@ class GameScene: SKScene {
                         node.name = ""
                         node.removeFromParent()
                         activeEnemies.remove(at: index)
+                    } else if node.name == "forceEnemy" {
+                        node.name = ""
+                        subtractLife()
+                        
+                        node.removeFromParent()
+                        activeEnemies.remove(at: index)
                     }
                 }
             }
@@ -462,6 +507,11 @@ class GameScene: SKScene {
             DispatchQueue.main.asyncAfter(deadline: .now() + (chainDelay / 10.0 * 2)) { [weak self] in self?.createEnemy() }
             DispatchQueue.main.asyncAfter(deadline: .now() + (chainDelay / 10.0 * 3)) { [weak self] in self?.createEnemy() }
             DispatchQueue.main.asyncAfter(deadline: .now() + (chainDelay / 10.0 * 4)) { [weak self] in self?.createEnemy() }
+            
+        case .oneFastestEnemy:
+            createEnemy()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + (Double.random(in: 2...10))) { [weak self] in self?.createEnemy() }
         }
         
         sequencePosition += 1

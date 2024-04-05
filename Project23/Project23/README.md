@@ -20,7 +20,7 @@
 ## Challenge:
 
 - [ ] Try removing the magic numbers in the createEnemy() method. Instead, define them as constant properties of your class, giving them useful names.
-- [ ] Create a new, fast-moving type of enemy that awards the player bonus points if they hit it.
+- [x] Create a new, fast-moving type of enemy that awards the player bonus points if they hit it.
 - [x] Add a “Game over” sprite node to the game scene when the player loses all their lives.
 
-<img width="500" alt="P2" src="https://sun9-77.userapi.com/impg/6rs3wqq8oZGqQfnEmL-egglyigYHGUYhoZTdqQ/H9UwPIV4sdg.jpg?size=1232x926&quality=95&sign=d47e29f261006e6886296adfe6f98911&type=album">
+<img width="500" alt="P2" src="https://sun9-61.userapi.com/impg/oiq5JaqyiVDkSXN0l2O4mOup6LLe1ubp7ksdEQ/-e2deKk5qy8.jpg?size=1228x922&quality=95&sign=e383b3d1400528294816e7b71fdaf9ef&type=album"> <img width="500" alt="P2" src="https://sun9-77.userapi.com/impg/6rs3wqq8oZGqQfnEmL-egglyigYHGUYhoZTdqQ/H9UwPIV4sdg.jpg?size=1232x926&quality=95&sign=d47e29f261006e6886296adfe6f98911&type=album">
