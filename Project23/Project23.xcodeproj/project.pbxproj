@@ -25,6 +25,7 @@
 		E18C7EA82BBA6CA8006C8B53 /* wrong.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9E2BBA6CA8006C8B53 /* wrong.caf */; };
 		E18C7EA92BBA6CA8006C8B53 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7E9F2BBA6CA8006C8B53 /* explosion.caf */; };
 		E18C7EAB2BBA6CC0006C8B53 /* sliceBombFuse.caf in Resources */ = {isa = PBXBuildFile; fileRef = E18C7EAA2BBA6CC0006C8B53 /* sliceBombFuse.caf */; };
+		E18C7EAD2BBF84DA006C8B53 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E18C7EAC2BBF84DA006C8B53 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E18C7E9E2BBA6CA8006C8B53 /* wrong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrong.caf; sourceTree = "<group>"; };
 		E18C7E9F2BBA6CA8006C8B53 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
 		E18C7EAA2BBA6CC0006C8B53 /* sliceBombFuse.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sliceBombFuse.caf; sourceTree = "<group>"; };
+		E18C7EAC2BBF84DA006C8B53 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				E18C7E7F2BBA6A72006C8B53 /* AppDelegate.swift */,
 				E18C7E812BBA6A72006C8B53 /* GameScene.sks */,
 				E18C7E852BBA6A72006C8B53 /* GameScene.swift */,
+				E18C7EAC2BBF84DA006C8B53 /* README.md */,
 				E18C7E872BBA6A72006C8B53 /* GameViewController.swift */,
 				E18C7E892BBA6A72006C8B53 /* Main.storyboard */,
 				E18C7E8C2BBA6A74006C8B53 /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 				E18C7EA52BBA6CA8006C8B53 /* whack.caf in Resources */,
 				E18C7E822BBA6A72006C8B53 /* GameScene.sks in Resources */,
 				E18C7EA02BBA6CA8006C8B53 /* sliceHitEnemy.sks in Resources */,
+				E18C7EAD2BBF84DA006C8B53 /* README.md in Resources */,
 				E18C7E8D2BBA6A74006C8B53 /* Assets.xcassets in Resources */,
 				E18C7EA22BBA6CA8006C8B53 /* sliceHitBomb.sks in Resources */,
 				E18C7E902BBA6A74006C8B53 /* LaunchScreen.storyboard in Resources */,
