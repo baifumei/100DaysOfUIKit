@@ -73,58 +73,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let position = CGPoint(x: (64 * column) + 32, y: (64 * row) + 32)
                 
                 if letter == "x" {
-                    //block
-                    let node = SKSpriteNode(imageNamed: "block")
-                    node.position = position
-                    
-                    node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
-                    node.physicsBody?.categoryBitMask = CollisionType.wall.rawValue //2
-                    node.physicsBody?.isDynamic = false
-                    
-                    addChild(node)
+                    createEntity(of: "block", position: position, number: CollisionType.wall.rawValue)
                     
                 } else if letter == "s" {
-                    let node = SKSpriteNode(imageNamed: "star")
-                    node.name = "star"
-                    node.position = position
-                    
-                    node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
-                    node.physicsBody?.isDynamic = false
-                    
-                    node.physicsBody?.categoryBitMask = CollisionType.star.rawValue // 4
-                    node.physicsBody?.contactTestBitMask = CollisionType.player.rawValue
-                    node.physicsBody?.collisionBitMask = 0
-                    
-                    addChild(node)
+                    createEntity(of: "star", position: position, number: CollisionType.star.rawValue)
                     
                 } else if letter == "v" {
-                    let node = SKSpriteNode(imageNamed: "vortex")
-                    node.name = "vortex"
-                    node.position = position
-                    node.run(SKAction.repeatForever(SKAction.rotate(byAngle: .pi, duration: 1)))
-                    
-                    node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
-                    node.physicsBody?.isDynamic = false
-                    
-                    node.physicsBody?.categoryBitMask = CollisionType.vortex.rawValue // 8
-                    node.physicsBody?.contactTestBitMask = CollisionType.player.rawValue // 1
-                    node.physicsBody?.collisionBitMask = 0
-                    
-                    addChild(node)
+                    createEntity(of: "vortex", position: position, number: CollisionType.vortex.rawValue)
                     
                 } else if letter == "f" {
-                    let node = SKSpriteNode(imageNamed: "finish")
-                    node.name = "finish"
-                    node.position = position
-                    
-                    node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
-                    node.physicsBody?.isDynamic = false
-
-                    node.physicsBody?.categoryBitMask = CollisionType.finish.rawValue // 16
-                    node.physicsBody?.contactTestBitMask = CollisionType.player.rawValue // 1
-                    node.physicsBody?.collisionBitMask = 0
-
-                    addChild(node)
+                    createEntity(of: "finish", position: position, number: CollisionType.finish.rawValue)
                     
                 } else if letter == " " {
                     //this is an empty space - do nothing
@@ -133,6 +91,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
+    }
+    
+    func createEntity(of name: String, position at: CGPoint, number caseRaw: UInt32) {
+        let node = SKSpriteNode(imageNamed: name)
+        node.name = name
+        node.position = at
+        
+        if name == "vortex" { node.run(SKAction.repeatForever(SKAction.rotate(byAngle: .pi, duration: 1)))}
+        
+        name == "block" ? (node.physicsBody = SKPhysicsBody(rectangleOf: node.size)) : (node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2))
+        node.physicsBody?.isDynamic = false
+
+        node.physicsBody?.categoryBitMask = caseRaw
+        node.physicsBody?.contactTestBitMask = CollisionType.player.rawValue
+        node.physicsBody?.collisionBitMask = 0
+
+        addChild(node)
     }
     
     func createPlayer() {
