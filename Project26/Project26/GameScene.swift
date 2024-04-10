@@ -5,6 +5,7 @@
 //  Created by Екатерина К on 4/9/24.
 //
 
+import CoreMotion
 import SpriteKit
 
 enum CollisionType: UInt32 {
@@ -21,6 +22,8 @@ class GameScene: SKScene {
     //a hack that lets us simulate the experience of moving the ball using touch
     var lastTouchPosition: CGPoint?
     
+    var motionManager: CMMotionManager?
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
@@ -32,6 +35,9 @@ class GameScene: SKScene {
         createPlayer()
         
         physicsWorld.gravity = .zero
+        
+        motionManager = CMMotionManager()
+        motionManager?.startAccelerometerUpdates()
     }
     
     func loadLevel() {
@@ -114,6 +120,7 @@ class GameScene: SKScene {
     func createPlayer() {
         player = SKSpriteNode(imageNamed: "player")
         player.position = CGPoint(x: 96, y: 672)
+        player.zPosition = 1 
         
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width / 2)
         player.physicsBody?.allowsRotation = false
@@ -143,9 +150,15 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        #if targetEnvironment(simulator)
         if let lastTouchPosition = lastTouchPosition {
             let diff = CGPoint(x: lastTouchPosition.x - player.position.x, y: lastTouchPosition.y - player.position.y)
             physicsWorld.gravity = CGVector(dx: diff.x / 100, dy: diff.y / 100)
         }
+        #else
+        if let accelerometerData = motionManager?.accelerometerData {
+            physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.y * -50, dy: accelerometerData.acceleration.x * -50)
+        }
+        #endif
     }
 }
