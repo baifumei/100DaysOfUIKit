@@ -26,14 +26,6 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession?.delegate = self
     }
-    /*
-     Multipeer connectivity requires four new classes:
-
-     1) MCSession is the manager class that handles all multipeer connectivity for us.
-     2) MCPeerID identifies each user uniquely in a session.
-     3) MCAdvertiserAssistant is used when creating a session, telling others that we exist and handling invitations.
-     4) MCBrowserViewController is used when looking for sessions, showing users who is nearby and letting them join.
-    */
         
     func startHosting(action: UIAlertAction) {
         guard let mcSession = mcSession else { return }
@@ -116,7 +108,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
     }
     
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        dismiss(animated: true )
+        dismiss(animated: true)
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -140,5 +132,7 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
             }
         }
     }
+    
+    
 }
 

@@ -15,3 +15,17 @@
 - [ ] Show an alert when a user has disconnected from our multipeer network. Something like “Paul’s iPhone has disconnected” is enough.
 - [ ] Try sending text messages across the network. You can create a Data from a string using Data(yourString.utf8), and convert a Data back to a string by using String(decoding: yourData, as: UTF8.self).
 - [ ] Add a button that shows an alert controller listing the names of all devices currently connected to the session – use the connectedPeers property of your session to find that information.
+
+
+
+
+
+
+## Important notes:
+
+Multipeer connectivity requires four new classes:
+
+1) MCSession is the manager class that handles all multipeer connectivity for us.
+2) MCPeerID identifies each user uniquely in a session.
+3) MCAdvertiserAssistant is used when creating a session, telling others that we exist and handling invitations.
+4) MCBrowserViewController is used when looking for sessions, showing users who is nearby and letting them join.
