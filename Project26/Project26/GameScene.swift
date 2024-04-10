@@ -24,12 +24,28 @@ class GameScene: SKScene {
     
     var motionManager: CMMotionManager?
     
+    var scoreLable: SKLabelNode!
+    var score = 0 {
+        didSet {
+            scoreLable.text = "Score: \(score)"
+        }
+    }
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
         background.blendMode = .replace
         background.zPosition = -1
         addChild(background)
+        
+        scoreLable = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLable.text = "Score: \(score)"
+        scoreLable.horizontalAlignmentMode = .left
+        scoreLable.fontSize = 30
+        scoreLable.position = CGPoint(x: 16, y: 16)
+        scoreLable.zPosition = 2
+        
+        addChild(scoreLable)
         
         loadLevel()
         createPlayer()
@@ -120,7 +136,7 @@ class GameScene: SKScene {
     func createPlayer() {
         player = SKSpriteNode(imageNamed: "player")
         player.position = CGPoint(x: 96, y: 672)
-        player.zPosition = 1 
+        player.zPosition = 1
         
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width / 2)
         player.physicsBody?.allowsRotation = false
