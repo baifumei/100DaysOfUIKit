@@ -15,6 +15,7 @@
 		E16BE2082BC6312600B7FEBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E16BE2072BC6312600B7FEBD /* Assets.xcassets */; };
 		E16BE20B2BC6312600B7FEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E16BE2092BC6312600B7FEBD /* LaunchScreen.storyboard */; };
 		E16BE2122BC6321000B7FEBD /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16BE2112BC6321000B7FEBD /* level1.txt */; };
+		E16BE2142BC6875200B7FEBD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E16BE2132BC6875200B7FEBD /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E16BE2072BC6312600B7FEBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E16BE20A2BC6312600B7FEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E16BE2112BC6321000B7FEBD /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		E16BE2132BC6875200B7FEBD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				E16BE1FA2BC6312400B7FEBD /* AppDelegate.swift */,
 				E16BE1FC2BC6312400B7FEBD /* GameScene.sks */,
 				E16BE2002BC6312400B7FEBD /* GameScene.swift */,
+				E16BE2132BC6875200B7FEBD /* README.md */,
 				E16BE2022BC6312400B7FEBD /* GameViewController.swift */,
 				E16BE2042BC6312400B7FEBD /* Main.storyboard */,
 				E16BE2072BC6312600B7FEBD /* Assets.xcassets */,
@@ -129,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16BE2142BC6875200B7FEBD /* README.md in Resources */,
 				E16BE2122BC6321000B7FEBD /* level1.txt in Resources */,
 				E16BE2062BC6312400B7FEBD /* Main.storyboard in Resources */,
 				E16BE1FD2BC6312400B7FEBD /* GameScene.sks in Resources */,
