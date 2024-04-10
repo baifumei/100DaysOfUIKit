@@ -16,6 +16,8 @@ enum CollisionType: UInt32 {
 }
 
 class GameScene: SKScene {
+    var player: SKSpriteNode!
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
         background.position = CGPoint(x: 512, y: 384)
@@ -24,6 +26,7 @@ class GameScene: SKScene {
         addChild(background)
         
         loadLevel()
+        createPlayer()
     }
     
     func loadLevel() {
@@ -101,5 +104,20 @@ class GameScene: SKScene {
                 }
             }
         }
+    }
+    
+    func createPlayer() {
+        player = SKSpriteNode(imageNamed: "player")
+        player.position = CGPoint(x: 96, y: 672)
+        
+        player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width / 2)
+        player.physicsBody?.allowsRotation = false
+        player.physicsBody?.linearDamping = 0.5
+        
+        player.physicsBody?.categoryBitMask = CollisionType.player.rawValue
+        player.physicsBody?.contactTestBitMask = CollisionType.star.rawValue | CollisionType.vortex.rawValue | CollisionType.finish.rawValue
+        player.physicsBody?.collisionBitMask = CollisionType.wall.rawValue
+        
+        addChild(player)
     }
 }
