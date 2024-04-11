@@ -1,0 +1,12 @@
+xxxxxxxxxxxxxxxx
+x s v s v s   vx
+x v s v s v    x
+xxxxxxxxxxxxxx x
+xv  vxs      v x
+x  s xv   v  v x
+x xx xv s v  v x
+xsxf xxxxxx    x
+x xs xvvvvs    x
+x xxxxs        x
+x         vvvvsx
+xxxxxxxxxxxxxxxx

@@ -19,6 +19,7 @@ enum CollisionType: UInt32 {
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var player: SKSpriteNode!
     var isGameOver = false
+    var level = 1
     
     //a hack that lets us simulate the experience of moving the ball using touch
     var lastTouchPosition: CGPoint?
@@ -33,23 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        let background = SKSpriteNode(imageNamed: "background")
-        background.position = CGPoint(x: 512, y: 384)
-        background.blendMode = .replace
-        background.zPosition = -1
-        addChild(background)
-        
-        scoreLable = SKLabelNode(fontNamed: "Chalkduster")
-        scoreLable.text = "Score: \(score)"
-        scoreLable.horizontalAlignmentMode = .left
-        scoreLable.fontSize = 30
-        scoreLable.position = CGPoint(x: 16, y: 16)
-        scoreLable.zPosition = 2
-        
-        addChild(scoreLable)
-        
-        loadLevel()
-        createPlayer()
+        loadLevel(of: "level1")
         
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
@@ -58,8 +43,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         motionManager?.startAccelerometerUpdates()
     }
     
-    func loadLevel() {
-        guard let levelURl = Bundle.main.url(forResource: "level1", withExtension: "txt") else {
+    func showScore() {
+        scoreLable = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLable.text = "Score: \(score)"
+        scoreLable.horizontalAlignmentMode = .left
+        scoreLable.fontSize = 30
+        scoreLable.position = CGPoint(x: 16, y: 16)
+        scoreLable.zPosition = 2
+        addChild(scoreLable)
+    }
+    
+    func loadLevel(of number: String) {
+        createPlayer()
+        
+        let background = SKSpriteNode(imageNamed: "background")
+        background.position = CGPoint(x: 512, y: 384)
+        background.blendMode = .replace
+        background.zPosition = -1
+        addChild(background)
+        
+        showScore()
+        
+        guard let levelURl = Bundle.main.url(forResource: number, withExtension: "txt") else {
             fatalError("Couldn't find level1.txt file in app bundle.")
     }
         guard let levelString = try? String(contentsOf: levelURl) else {
@@ -187,7 +192,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             node.removeFromParent()
             score += 1
         } else if node.name == "finish" {
-             //next level
+            removeAllChildren()
+            level += 1
+            
+            if level <= 3 {
+                loadLevel(of: "level" + "\(level)")
+            } else {
+                isGameOver = true
+                player.physicsBody?.isDynamic = false
+                
+                let gameOver = SKSpriteNode(imageNamed: "gameOver")
+                gameOver.position = CGPoint(x: 512, y: 384)
+                gameOver.zPosition = 4
+                addChild(gameOver)
+            }
         }
     }
 }
