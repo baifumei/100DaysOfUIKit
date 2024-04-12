@@ -37,6 +37,9 @@ class ViewController: UIViewController {
             
         case 3:
             drawRotatedSquares()
+        
+        case 4:
+            drawLines()
             
         default:
             break
@@ -48,9 +51,9 @@ class ViewController: UIViewController {
         
         let image = renderer.image { ctx in
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 10, dy: 10)
-            ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            ctx.cgContext.setFillColor(UIColor.green.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(10)
+            ctx.cgContext.setLineWidth(1)
             
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
@@ -65,7 +68,7 @@ class ViewController: UIViewController {
             let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512).insetBy(dx: 10, dy: 10)
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
-            ctx.cgContext.setLineWidth(10)
+            ctx.cgContext.setLineWidth(6)
             
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
@@ -107,6 +110,32 @@ class ViewController: UIViewController {
             ctx.cgContext.strokePath()
         }
         
+        imageView.image = image
+    }
+    
+    func drawLines() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { ctx in
+            ctx.cgContext.translateBy(x: 256, y: 256)
+        
+            var first = true
+            var length: CGFloat = 256
+            
+            for _ in 0..<256 {
+                ctx.cgContext.rotate(by: .pi / 2)
+                
+                if first {
+                    ctx.cgContext.move(to: CGPoint(x: length, y: 50))
+                    first = false
+                } else {
+                    ctx.cgContext.addLine(to: CGPoint(x: length, y: 50))
+                }
+                length *= 0.99
+            }
+            ctx.cgContext.setStrokeColor(UIColor.blue.cgColor)
+            ctx.cgContext.strokePath()
+        }
         imageView.image = image
     }
 }
