@@ -32,6 +32,9 @@ class ViewController: UIViewController {
         case 1:
             drawCicle()
             
+        case 2:
+            drawCheckerBoard()
+            
         default:
             break
         }
@@ -64,6 +67,22 @@ class ViewController: UIViewController {
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
+        imageView.image = image
+    }
+    
+    func drawCheckerBoard() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { ctx in
+            for row in 0..<8 {
+                for col in 0..<8 {
+                    if (row + col).isMultiple(of: 2) {
+                        ctx.cgContext.fill(CGRect(x: (row * 64), y: (col * 64), width: 64, height: 64))
+                    }
+                }
+            }
+        }
+        
         imageView.image = image
     }
 }
