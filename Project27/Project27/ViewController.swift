@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        drawRectangle()
+        drawEmoji()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
         currentDrawType += 1
         
-        if currentDrawType > 5 {
+        if currentDrawType > 6 {
             currentDrawType = 0
         }
         
@@ -43,6 +43,9 @@ class ViewController: UIViewController {
             
         case 5:
             drawImagesAndText()
+            
+        case 6:
+            drawEmoji()
             
         default:
             break
@@ -164,5 +167,43 @@ class ViewController: UIViewController {
         }
         imageView.image = image
     }
+    
+//🙂
+    func drawEmoji() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { ctx in
+            ctx.cgContext.translateBy(x: 256, y: 256)
+            
+            // Face
+            let faceRect = CGRect(x: -200, y: -200, width: 400, height: 400)
+            ctx.cgContext.setFillColor(UIColor.yellow.cgColor)
+            ctx.cgContext.addEllipse(in: faceRect)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // Eyes
+            let rightEyeRect = CGRect(x: -100, y: -50, width: 40, height: 70)
+            let leftEyeRect = CGRect(x: 70, y: -50, width: 40, height: 70)
+            ctx.cgContext.setFillColor(UIColor.brown.cgColor)
+            ctx.cgContext.addEllipse(in: rightEyeRect)
+            ctx.cgContext.addEllipse(in: leftEyeRect)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            // Smile
+            let smile = CGRect(x: -80, y: 50, width: 160, height: 70)
+            ctx.cgContext.setFillColor(UIColor.brown.cgColor)
+            ctx.cgContext.addEllipse(in: smile)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+            let smile2 = CGRect(x: -90, y: 40, width: 180, height: 70)
+            ctx.cgContext.setFillColor(UIColor.yellow.cgColor)
+            ctx.cgContext.addEllipse(in: smile2)
+            ctx.cgContext.drawPath(using: .fill)
+                    
+        }
+        imageView.image = image
+    }
 }
-

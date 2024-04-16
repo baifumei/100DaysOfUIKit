@@ -13,6 +13,8 @@
 
 ## Challenge:
 
-- [ ] Pick any emoji and try creating it using Core Graphics. You should find some easy enough, but for a harder challenge you could also try something like the star emoji.
+- [x] Pick any emoji and try creating it using Core Graphics. You should find some easy enough, but for a harder challenge you could also try something like the star emoji.
 - [ ] Use a combination of move(to:) and addLine(to:) to create and stroke a path that spells “TWIN” on the canvas.
 - [ ] Go back to project 3 and change the way the selected image is shared so that it has some rendered text on top saying “From Storm Viewer”. This means reading the size property of the original image, creating a new canvas at that size, drawing the image in, then adding your text on top.
+
+<img width="500" alt="P2" src="https://sun9-56.userapi.com/impg/HnEIWOHYudQJUmoSoDwyOvFuwpMUDETZsajNIg/cDsliMSEGUU.jpg?size=2560x1919&quality=95&sign=dd62d9f3a1f19c0034ec3c14d32d637b&type=album"> 
