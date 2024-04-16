@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        drawbomb()
+        drawRectangle()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
         currentDrawType += 1
         
-        if currentDrawType > 6 {
+        if currentDrawType > 7 {
             currentDrawType = 0
         }
         
@@ -46,6 +46,9 @@ class ViewController: UIViewController {
             
         case 6:
             drawEmoji()
+            
+        case 7:
+            drawbomb()
             
         default:
             break
@@ -214,7 +217,6 @@ class ViewController: UIViewController {
             ctx.cgContext.translateBy(x: 256, y: 256)
             
             //first red bomb
-            
             ctx.cgContext.move(to: CGPoint(x: 246, y: 246))
             ctx.cgContext.addLine(to: CGPoint(x: 120, y: 12))
             ctx.cgContext.addLine(to: CGPoint(x: 224, y: -17))
@@ -266,6 +268,34 @@ class ViewController: UIViewController {
             ctx.cgContext.addLine(to: CGPoint(x: 180, y: 164))
             
             ctx.cgContext.setFillColor(UIColor.orange.cgColor)
+            ctx.cgContext.drawPath(using: .fill)
+            
+            // third yellow bomb
+            ctx.cgContext.move(to: CGPoint(x: 112, y: 82))
+            ctx.cgContext.addLine(to: CGPoint(x: 74, y: -5))
+            ctx.cgContext.addLine(to: CGPoint(x: 140, y: -25))
+            ctx.cgContext.addLine(to: CGPoint(x: 85, y: -35))
+            ctx.cgContext.addLine(to: CGPoint(x: 105, y: -95))
+            ctx.cgContext.addLine(to: CGPoint(x: 66, y: -59))
+            ctx.cgContext.addLine(to: CGPoint(x: 54, y: -102))
+            ctx.cgContext.addLine(to: CGPoint(x: 41, y: -51))
+            ctx.cgContext.addLine(to: CGPoint(x: 8, y: -112))
+            ctx.cgContext.addLine(to: CGPoint(x: 1, y: -70))
+            ctx.cgContext.addLine(to: CGPoint(x: -50, y: -92))
+            
+            ctx.cgContext.addLine(to: CGPoint(x: -22, y: -48))
+            ctx.cgContext.addLine(to: CGPoint(x: -80, y: -40))
+            ctx.cgContext.addLine(to: CGPoint(x: -31, y: -4))
+            ctx.cgContext.addLine(to: CGPoint(x: -78, y: 15))
+            ctx.cgContext.addLine(to: CGPoint(x: -30, y: 13))
+            ctx.cgContext.addLine(to: CGPoint(x: -76, y: 55))
+            ctx.cgContext.addLine(to: CGPoint(x: -15, y: 25))
+            
+            ctx.cgContext.addLine(to: CGPoint(x: -18, y: 78))
+            ctx.cgContext.addLine(to: CGPoint(x: 47, y: 20))
+            ctx.cgContext.addLine(to: CGPoint(x: 112, y: 82))
+            
+            ctx.cgContext.setFillColor(UIColor.yellow.cgColor)
             ctx.cgContext.drawPath(using: .fill)
         }
         imageView.image = image
