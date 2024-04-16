@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        drawEmoji()
+        drawbomb()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
@@ -202,7 +202,44 @@ class ViewController: UIViewController {
             ctx.cgContext.setFillColor(UIColor.yellow.cgColor)
             ctx.cgContext.addEllipse(in: smile2)
             ctx.cgContext.drawPath(using: .fill)
-                    
+        }
+        imageView.image = image
+    }
+    
+//💥
+    func drawbomb() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { ctx in
+            ctx.cgContext.translateBy(x: 256, y: 256)
+            
+            //first red bomb
+            
+            ctx.cgContext.move(to: CGPoint(x: 246, y: 246))
+            ctx.cgContext.addLine(to: CGPoint(x: 120, y: 12))
+            ctx.cgContext.addLine(to: CGPoint(x: 224, y: -17))
+            ctx.cgContext.addLine(to: CGPoint(x: 135, y: -60))
+            ctx.cgContext.addLine(to: CGPoint(x: 205, y: -225))
+            ctx.cgContext.addLine(to: CGPoint(x: 78, y: -118))
+            ctx.cgContext.addLine(to: CGPoint(x: 54, y: -218))
+            ctx.cgContext.addLine(to: CGPoint(x: 34, y: -123))
+            ctx.cgContext.addLine(to: CGPoint(x: -84, y: -246))
+            ctx.cgContext.addLine(to: CGPoint(x: -38, y: -122))
+            ctx.cgContext.addLine(to: CGPoint(x: -120, y: -158))
+            ctx.cgContext.addLine(to: CGPoint(x: -68, y: -84))
+            ctx.cgContext.addLine(to: CGPoint(x: -240, y: -112))
+            ctx.cgContext.addLine(to: CGPoint(x: -95, y: -13))
+            ctx.cgContext.addLine(to: CGPoint(x: -235, y: 15))
+            ctx.cgContext.addLine(to: CGPoint(x: -90, y: 40))
+            ctx.cgContext.addLine(to: CGPoint(x: -230, y: 136))
+            ctx.cgContext.addLine(to: CGPoint(x: -47, y: 70))
+            ctx.cgContext.addLine(to: CGPoint(x: -67, y: 235))
+            ctx.cgContext.addLine(to: CGPoint(x: 50, y: 62))
+            ctx.cgContext.addLine(to: CGPoint(x: 246, y: 246))
+
+            ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.drawPath(using: .fillStroke)
         }
         imageView.image = image
     }
