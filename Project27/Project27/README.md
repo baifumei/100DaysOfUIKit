@@ -14,9 +14,11 @@
 ## Challenge:
 
 - [x] Pick any emoji and try creating it using Core Graphics. You should find some easy enough, but for a harder challenge you could also try something like the star emoji.
-- [ ] Use a combination of move(to:) and addLine(to:) to create and stroke a path that spells “TWIN” on the canvas.
+- [x] Use a combination of move(to:) and addLine(to:) to create and stroke a path that spells “TWIN” on the canvas.
 - [ ] Go back to project 3 and change the way the selected image is shared so that it has some rendered text on top saying “From Storm Viewer”. This means reading the size property of the original image, creating a new canvas at that size, drawing the image in, then adding your text on top.
 
 <img width="500" alt="P2" src="https://sun9-56.userapi.com/impg/HnEIWOHYudQJUmoSoDwyOvFuwpMUDETZsajNIg/cDsliMSEGUU.jpg?size=2560x1919&quality=95&sign=dd62d9f3a1f19c0034ec3c14d32d637b&type=album">
 
-<img width="500" alt="P2" src="https://sun9-64.userapi.com/impg/SuuXyDtrKTH2xwmbAYuxNmZcPCZ7ddaFZl5Jmw/N9Y2z2ZHEbk.jpg?size=2560x1919&quality=96&sign=9353bf52bcc93c2e88aa66c8cb601bda&type=album"> <img width="500" alt="P2" src="https://sun9-12.userapi.com/impg/nDITBBR8vj-7yP6EC5Na60VmJe3s-bxoXGmOew/LvdY3gaRH6w.jpg?size=2560x1919&quality=95&sign=6bb5922a49797c703451838ed6e6f6dc&type=album">
+<img width="500" alt="P2" src="https://sun9-64.userapi.com/impg/SuuXyDtrKTH2xwmbAYuxNmZcPCZ7ddaFZl5Jmw/N9Y2z2ZHEbk.jpg?size=2560x1919&quality=96&sign=9353bf52bcc93c2e88aa66c8cb601bda&type=album"> <img width="500" alt="P2" src="https://sun9-12.userapi.com/impg/nDITBBR8vj-7yP6EC5Na60VmJe3s-bxoXGmOew/LvdY3gaRH6w.jpg?size=2560x1919&quality=95&sign=6bb5922a49797c703451838ed6e6f6dc&type=album"> <img width="500" alt="P2" src="https://sun9-51.userapi.com/impg/L1KOZ_-4s9kn4djvjdJ7uhb_8X3nA_EpgO8d9g/W0FxlzxUKvY.jpg?size=2560x1919&quality=95&sign=9cfae0d41cc5ae6c315ec2e8554d8f23&type=album">
+
+<img width="500" alt="P2" src="https://sun9-67.userapi.com/impg/6omRP5kJPzsOUqaW3JK0JkkqdA_nQCce_j4UBg/SyqQWnW5apQ.jpg?size=2560x1919&quality=95&sign=1e9fec58c87b00f8d32d9cb4231ca827&type=album">
