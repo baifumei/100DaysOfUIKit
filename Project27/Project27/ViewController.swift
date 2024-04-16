@@ -240,6 +240,33 @@ class ViewController: UIViewController {
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
             ctx.cgContext.drawPath(using: .fillStroke)
+            
+            
+            //second orange bomb
+            ctx.cgContext.move(to: CGPoint(x: 180, y: 164))
+            ctx.cgContext.addLine(to: CGPoint(x: 90, y: 2))
+            ctx.cgContext.addLine(to: CGPoint(x: 179, y: -19))
+            ctx.cgContext.addLine(to: CGPoint(x: 100, y: -50))
+            ctx.cgContext.addLine(to: CGPoint(x: 149, y: -160))
+            ctx.cgContext.addLine(to: CGPoint(x: 72, y: -78))
+            ctx.cgContext.addLine(to: CGPoint(x: 56, y: -145))
+            ctx.cgContext.addLine(to: CGPoint(x: 42, y: -82))
+            ctx.cgContext.addLine(to: CGPoint(x: -26, y: -164))
+            ctx.cgContext.addLine(to: CGPoint(x: -5, y: -91))
+            ctx.cgContext.addLine(to: CGPoint(x: -70, y: -120))
+            ctx.cgContext.addLine(to: CGPoint(x: -50, y: -66))
+            ctx.cgContext.addLine(to: CGPoint(x: -160, y: -78))
+            ctx.cgContext.addLine(to: CGPoint(x: -63, y: -8))
+            ctx.cgContext.addLine(to: CGPoint(x: -156, y: 15))
+            ctx.cgContext.addLine(to: CGPoint(x: -60, y: 26))
+            ctx.cgContext.addLine(to: CGPoint(x: -133, y: 90))
+            ctx.cgContext.addLine(to: CGPoint(x: -31, y: 46))
+            ctx.cgContext.addLine(to: CGPoint(x: -44, y: 156))
+            ctx.cgContext.addLine(to: CGPoint(x: 50, y: 38))
+            ctx.cgContext.addLine(to: CGPoint(x: 180, y: 164))
+            
+            ctx.cgContext.setFillColor(UIColor.orange.cgColor)
+            ctx.cgContext.drawPath(using: .fill)
         }
         imageView.image = image
     }

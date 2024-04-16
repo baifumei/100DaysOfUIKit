@@ -19,4 +19,4 @@
 
 <img width="500" alt="P2" src="https://sun9-56.userapi.com/impg/HnEIWOHYudQJUmoSoDwyOvFuwpMUDETZsajNIg/cDsliMSEGUU.jpg?size=2560x1919&quality=95&sign=dd62d9f3a1f19c0034ec3c14d32d637b&type=album">
 
-<img width="500" alt="P2" src="https://sun9-64.userapi.com/impg/SuuXyDtrKTH2xwmbAYuxNmZcPCZ7ddaFZl5Jmw/N9Y2z2ZHEbk.jpg?size=2560x1919&quality=96&sign=9353bf52bcc93c2e88aa66c8cb601bda&type=album">
+<img width="500" alt="P2" src="https://sun9-64.userapi.com/impg/SuuXyDtrKTH2xwmbAYuxNmZcPCZ7ddaFZl5Jmw/N9Y2z2ZHEbk.jpg?size=2560x1919&quality=96&sign=9353bf52bcc93c2e88aa66c8cb601bda&type=album"> <img width="500" alt="P2" src="https://sun9-12.userapi.com/impg/nDITBBR8vj-7yP6EC5Na60VmJe3s-bxoXGmOew/LvdY3gaRH6w.jpg?size=2560x1919&quality=95&sign=6bb5922a49797c703451838ed6e6f6dc&type=album">
