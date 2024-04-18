@@ -9,10 +9,15 @@ import LocalAuthentication
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var rightBarButtonItem: UIBarButtonItem!
     @IBOutlet var secret: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(relockButton))
+        navigationItem.rightBarButtonItem = nil
         
         title = "Nothing to see here!"
     
@@ -42,7 +47,7 @@ class ViewController: UIViewController {
                 }
             }
         } else {
-            let ac = UIAlertController(title: "Biometry unavailable", message: "Ypor device is not configured for biomentric authentication!", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biomentric authentication!", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }
@@ -68,6 +73,7 @@ class ViewController: UIViewController {
     
     func unlockSecretMessage() {
         secret.isHidden = false
+        navigationItem.rightBarButtonItem = rightBarButtonItem
         title = "Secret stuff!"
         
         secret.text = KeychainWrapper.standard.string(forKey: "SecretMessage") ?? ""
@@ -80,6 +86,11 @@ class ViewController: UIViewController {
         secret.resignFirstResponder()
         secret.isHidden = true
         title = "Nothing to see here!"
+        navigationItem.rightBarButtonItem = nil
+    }
+    
+    @objc func relockButton() {
+        saveSecretMessage()
     }
 }
 
