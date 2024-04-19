@@ -14,7 +14,7 @@
 ## Challenge:
 
 - [x] Add a Done button as a navigation bar item that causes the app to re-lock immediately rather than waiting for the user to quit. This should only be shown when the app is unlocked.
-- [ ] Create a password system for your app so that the Touch ID/Face ID fallback is more useful. You'll need to use an alert controller with a text field like we did in project 5, and I suggest you save the password in the keychain!
+- [x] Create a password system for your app so that the Touch ID/Face ID fallback is more useful. You'll need to use an alert controller with a text field like we did in project 5, and I suggest you save the password in the keychain!
 - [ ] Go back to project 10 (Names to Faces) and add biometric authentication so the user’s pictures are shown only when they have unlocked the app. You’ll need to give some thought to how you can hide the pictures – perhaps leave the array empty until they are authenticated?
 
-<img width="300" alt="P2" src="https://sun9-55.userapi.com/impg/GVFpYQ6FCKmk577DRn9Z_gGdU4673S66Kcnxbg/7dXgRkcCIhg.jpg?size=996x2160&quality=95&sign=a3823527f62d6dbbf9b96c13040cee27&type=album">
+<img width="300" alt="P2" src="https://sun9-55.userapi.com/impg/GVFpYQ6FCKmk577DRn9Z_gGdU4673S66Kcnxbg/7dXgRkcCIhg.jpg?size=996x2160&quality=95&sign=a3823527f62d6dbbf9b96c13040cee27&type=album"> <img width="300" alt="P2" src="https://sun9-78.userapi.com/impg/J5xbyhDS0Vuz_XGJakeUN99gbeooxCrUBmxlJg/XNivmZHDNgM.jpg?size=996x2160&quality=95&sign=b80e8bbc5ce7b295a1675aea081db271&type=album"> <img width="300" alt="P2" src="https://sun9-13.userapi.com/impg/YeNfXld6LkpDN5dyxvaK33rHtN2tOmgdnNtYjg/JU4IeJ9ZbA4.jpg?size=996x2160&quality=95&sign=87746f5e5781a06b982216983d361550&type=album"> 

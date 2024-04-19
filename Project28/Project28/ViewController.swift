@@ -25,6 +25,17 @@ class ViewController: UIViewController {
         notification.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notification.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         notification.addObserver(self, selector: #selector(saveSecretMessage), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        if KeychainWrapper.standard.hasValue(forKey: "password") == false {
+            let ac = UIAlertController(title: "Create a password", message: "This passward will be used for login", preferredStyle: .alert)
+            ac.addTextField()
+            ac.addAction(UIAlertAction(title: "Submit", style: .cancel) { _ in
+                if let password = ac.textFields?.first?.text {
+                    KeychainWrapper.standard.set(password, forKey: "password")
+                }
+            })
+            present(ac, animated: true)
+        }
     }
 
     @IBAction func authenticateTapped(_ sender: Any) {
@@ -39,10 +50,18 @@ class ViewController: UIViewController {
                     if success {
                         self?.unlockSecretMessage()
                     } else {
-                        let ac = UIAlertController(title: "Authentication failed", message: "You should not be verified; please, try again!", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        let ac = UIAlertController(title: "Enter your password", message: nil, preferredStyle: .alert)
+                        ac.addTextField()
+                        ac.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                            if let enteredPassword = ac.textFields?.first?.text {
+                                if let savedPassword = KeychainWrapper.standard.string(forKey: "password") {
+                                    if enteredPassword == savedPassword {
+                                        self?.unlockSecretMessage()
+                                    }
+                                }
+                            }
+                        })
                         self?.present(ac, animated: true)
-                        
                     }
                 }
             }
