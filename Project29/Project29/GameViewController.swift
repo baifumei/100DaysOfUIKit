@@ -25,7 +25,6 @@ class GameViewController: UIViewController {
     @IBOutlet var playerNumber: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,7 +82,7 @@ class GameViewController: UIViewController {
     
     func activatePlayer(number: Int) {
         if number == 1 {
-            playerNumber.text = "PLAYER ONE"
+            playerNumber.text = "<<< PLAYER ONE"
         } else {
             playerNumber.text = ">>> PLAYER TWO"
         }

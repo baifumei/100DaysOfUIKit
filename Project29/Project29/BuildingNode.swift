@@ -17,9 +17,11 @@ class BuildingNode: SKSpriteNode {
         
         currentImage = drawBuilding(size: size)
         texture = SKTexture(image: currentImage)
+        
+        configurePhysics()
     }
     
-    func configurePhisics() {
+    func configurePhysics() {
         physicsBody = SKPhysicsBody(texture: texture!, size: size)
         physicsBody?.isDynamic = false
         physicsBody?.categoryBitMask = CollisionTypes.building.rawValue
@@ -36,7 +38,7 @@ class BuildingNode: SKSpriteNode {
             
             switch Int.random(in: 0...2) {
             case 0: 
-                color = UIColor(hue: 0.062, saturation: 0.89, brightness: 0.63, alpha: 1)
+                color = UIColor(hue: 0.062, saturation: 0.79, brightness: 0.53, alpha: 1)
             case 1:
                 color = UIColor(hue: 0.559, saturation: 0.13, brightness: 0.63, alpha: 1)
             default:
