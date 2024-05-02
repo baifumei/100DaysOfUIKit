@@ -13,7 +13,7 @@ enum CollisionTypes: UInt32 {
     case player = 4
 }
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     var buildings = [BuildingNode]()
     weak var viewController: GameViewController?
     
@@ -28,6 +28,8 @@ class GameScene: SKScene {
         
         createBuildings()
         createPlayers()
+        
+        physicsWorld.contactDelegate = self
     }
     
     func createBuildings() {
@@ -124,5 +126,43 @@ class GameScene: SKScene {
     
     func deg2rad(degrees: Int) -> Double {
         return Double(degrees) * .pi / 180
+    }
+        
+    func didBegin(_ contact: SKPhysicsContact) {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        guard let firstNode = firstBody.node else { return }
+        guard let secondNode = secondBody.node else { return }
+        
+        if firstNode.name == "banana" && secondNode.name == "building" {
+            //bananaHit(building: secondNode, atPoint: contact.contactPoint)
+        }
+        
+        if firstNode.name == "banana" && secondNode.name == "player1" {
+            destroy(player: player1)
+        }
+        
+        if firstNode.name == "banana" && secondNode.name == "player2" {
+            destroy(player: player2)
+        }
+    }
+    
+    func destroy(player: SKSpriteNode) {
+        if let emitter = SKEmitterNode(fileNamed: "hitPlayer") {
+            emitter.position = player.position
+            addChild(emitter)
+        }
+        
+        banana.removeFromParent()
+        player.removeFromParent()
     }
 }
