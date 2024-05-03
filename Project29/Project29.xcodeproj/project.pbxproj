@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E11B89B12BD65F2A00F57DA1 /* BuildingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11B89B02BD65F2A00F57DA1 /* BuildingNode.swift */; };
+		E16FBCD42BE4919400D189A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E16FBCD32BE4919400D189A7 /* README.md */; };
 		E1C1778C2BD65BD900E57D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C1778B2BD65BD900E57D8D /* AppDelegate.swift */; };
 		E1C1778E2BD65BD900E57D8D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1C1778D2BD65BD900E57D8D /* GameScene.sks */; };
 		E1C177922BD65BD900E57D8D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C177912BD65BD900E57D8D /* GameScene.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		E11B89B02BD65F2A00F57DA1 /* BuildingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingNode.swift; sourceTree = "<group>"; };
+		E16FBCD32BE4919400D189A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E1C177882BD65BD900E57D8D /* Project29.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project29.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C1778B2BD65BD900E57D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C1778D2BD65BD900E57D8D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				E1C1778B2BD65BD900E57D8D /* AppDelegate.swift */,
 				E1C1778D2BD65BD900E57D8D /* GameScene.sks */,
 				E1C177912BD65BD900E57D8D /* GameScene.swift */,
+				E16FBCD32BE4919400D189A7 /* README.md */,
 				E11B89B02BD65F2A00F57DA1 /* BuildingNode.swift */,
 				E1C177932BD65BD900E57D8D /* GameViewController.swift */,
 				E1C177952BD65BD900E57D8D /* Main.storyboard */,
@@ -138,6 +141,7 @@
 				E1C1778E2BD65BD900E57D8D /* GameScene.sks in Resources */,
 				E1C177972BD65BD900E57D8D /* Base in Resources */,
 				E1C177A42BD65CA200E57D8D /* hitPlayer.sks in Resources */,
+				E16FBCD42BE4919400D189A7 /* README.md in Resources */,
 				E1C177992BD65BDB00E57D8D /* Assets.xcassets in Resources */,
 				E1C1779C2BD65BDB00E57D8D /* Base in Resources */,
 				E1C177A52BD65CA200E57D8D /* hitBuilding.sks in Resources */,
