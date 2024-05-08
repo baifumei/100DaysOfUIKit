@@ -50,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createScoreLab() {
         scoreLabel = SKLabelNode(fontNamed: "Helvetica")
         scoreLabel.text = "SCORE \(score1) : \(score2)"
-        scoreLabel.position = CGPoint(x: 950, y: 706)
+        scoreLabel.position = CGPoint(x: 512, y: 630)
         scoreLabel.fontSize = 17
         addChild(scoreLabel)
     }
