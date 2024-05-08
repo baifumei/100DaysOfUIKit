@@ -23,9 +23,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var currentPlayer = 1
     
+    var scoreLabel: SKLabelNode!
+    var score1 = 0 {
+        didSet {
+            scoreLabel.text = "SCORE \(score1) : \(score2)"
+        }
+    }
+    var score2 = 0 {
+        didSet {
+            scoreLabel.text = "SCORE \(score1) : \(score2)"
+        }
+    }
+    
     override func didMove(to view: SKView) {
         backgroundColor = UIColor(hue: 0.676, saturation: 0.76, brightness: 0.76, alpha: 1)
         createStarsSky()
+        
+        createScoreLab()
         
         createBuildings()
         createPlayers()
@@ -33,26 +47,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
     }
     
+    func createScoreLab() {
+        scoreLabel = SKLabelNode(fontNamed: "Helvetica")
+        scoreLabel.text = "SCORE \(score1) : \(score2)"
+        scoreLabel.position = CGPoint(x: 950, y: 706)
+        scoreLabel.fontSize = 17
+        addChild(scoreLabel)
+    }
+    
     func createStarsSky() {
         var starCount = 0
         
-        while starCount != 20 {
+        while starCount != 40 {
             if let star = SKEmitterNode(fileNamed: "star") {
                 star.position = CGPoint(x: Double.random(in: 20...980), y: Double.random(in: 300...700))
                 star.zPosition = -1
                 addChild(star)
             }
-            starCount += 1
-        }
-        
-        while starCount != 30 {
-        if let bigStar = SKEmitterNode(fileNamed: "bigStar") {
-
+            if let bigStar = SKEmitterNode(fileNamed: "bigStar") {
                 bigStar.position = CGPoint(x: Double.random(in: 20...980), y: Double.random(in: 300...700))
-            bigStar.zPosition = -1
-                addChild(bigStar)
-                starCount += 1
-            }
+                bigStar.zPosition = -1
+                    addChild(bigStar)
+                    starCount += 1
+                }
+            starCount += 1
         }
     }
     
@@ -173,10 +191,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if firstNode.name == "banana" && secondNode.name == "player1" {
             destroy(player: player1)
+            score2 += 1
         }
         
         if firstNode.name == "banana" && secondNode.name == "player2" {
             destroy(player: player2)
+            score1 += 1
         }
     }
     
@@ -196,6 +216,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             self.changePlayer()
             newGame.currentPlayer = self.currentPlayer
+            
+            if self.score1 < 3, self.score2 < 3 {
+                newGame.scoreLabel = self.scoreLabel
+                
+                newGame.score1 = self.score1
+                newGame.score2 = self.score2
+            }
             
             let transition = SKTransition.doorway(withDuration: 1.5)
             self.view?.presentScene(newGame, transition: transition)
