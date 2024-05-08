@@ -25,11 +25,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         backgroundColor = UIColor(hue: 0.676, saturation: 0.76, brightness: 0.76, alpha: 1)
+        createStarsSky()
         
         createBuildings()
         createPlayers()
         
         physicsWorld.contactDelegate = self
+    }
+    
+    func createStarsSky() {
+        var starCount = 0
+        
+        while starCount != 20 {
+            if let star = SKEmitterNode(fileNamed: "star") {
+                star.position = CGPoint(x: Double.random(in: 20...980), y: Double.random(in: 300...700))
+                star.zPosition = -1
+                addChild(star)
+            }
+            starCount += 1
+        }
+        
+        while starCount != 30 {
+        if let bigStar = SKEmitterNode(fileNamed: "bigStar") {
+
+                bigStar.position = CGPoint(x: Double.random(in: 20...980), y: Double.random(in: 300...700))
+            bigStar.zPosition = -1
+                addChild(bigStar)
+                starCount += 1
+            }
+        }
     }
     
     func createBuildings() {
