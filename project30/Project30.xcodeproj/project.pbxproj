@@ -60,6 +60,7 @@
 		51BE9E691A2667CD00578AA0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BE9E671A2667CD00578AA0 /* LaunchScreen.xib */; };
 		51BE9E7F1A26680100578AA0 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE9E7E1A26680100578AA0 /* SelectionViewController.swift */; };
 		51BE9E811A266A3800578AA0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE9E801A266A3800578AA0 /* ImageViewController.swift */; };
+		E103E58D2C0435EA0012452D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E103E58C2C0435EA0012452D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		51BE9E681A2667CD00578AA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		51BE9E7E1A26680100578AA0 /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		51BE9E801A266A3800578AA0 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		E103E58C2C0435EA0012452D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				51BE9E5E1A2667CD00578AA0 /* AppDelegate.swift */,
 				51BE9E7E1A26680100578AA0 /* SelectionViewController.swift */,
 				51BE9E801A266A3800578AA0 /* ImageViewController.swift */,
+				E103E58C2C0435EA0012452D /* README.md */,
 				51BE9E651A2667CD00578AA0 /* Images.xcassets */,
 				51BE9E671A2667CD00578AA0 /* LaunchScreen.xib */,
 				51BE9E5C1A2667CD00578AA0 /* Supporting Files */,
@@ -267,6 +270,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -330,6 +334,7 @@
 				5138B3E61D69197400FD2417 /* TLDR-Thumb.jpg in Resources */,
 				5138B3E51D69197400FD2417 /* TLDR-Large.jpg in Resources */,
 				5138B3D31D69197400FD2417 /* LMAO-Thumb@2x.jpg in Resources */,
+				E103E58D2C0435EA0012452D /* README.md in Resources */,
 				5138B3CE1D69197400FD2417 /* IRL-Thumb.jpg in Resources */,
 				5138B3BE1D69197400FD2417 /* BRB-Thumb.jpg in Resources */,
 				5138B3C31D69197400FD2417 /* BTW-Thumb@2x.jpg in Resources */,
