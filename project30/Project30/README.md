@@ -31,3 +31,11 @@ is (UITableViewCell):
 ## Fixing the bugs: Running out of memory
 
 <img width="500" alt="P2" src="https://sun9-47.userapi.com/impg/s13ahh_WZ5sjHlXFfYBWwTXTl4wwYSPvxVq3gA/VuacjuhKrtw.jpg?size=2560x1600&quality=95&sign=0fcf57a0f78966bad32c12a540759088&type=album"> -> <img width="500" alt="P2" src="https://sun9-24.userapi.com/impg/x6-OMVV6AK8dW0di8Bhnvno-667j5o3VDMfXIQ/Rsd-X29ntIY.jpg?size=2560x1600&quality=95&sign=a962f8a8e0e1d45962ac32066aa06ba7&type=album">  
+
+
+
+## Challenge:
+
+- [ ] Go through project 30 and remove all the force unwraps. Note: implicitly unwrapped optionals are not the same thing as force unwraps – you’re welcome to fix the implicitly unwrapped optionals too, but that’s a bonus task.
+- [ ] Pick any of the previous 29 projects that interests you, and try exploring it using the Allocations instrument. Can you find any objects that are persistent when they should have been destroyed?
+- [ ] For a tougher challenge, take the image generation code out of cellForRowAt: generate all images when the app first launches, and use those smaller versions instead. For bonus points, combine the getDocumentsDirectory() method I introduced in project 10 so that you save the resulting cache to make sure it never happens again.
