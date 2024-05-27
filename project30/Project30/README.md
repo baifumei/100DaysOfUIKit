@@ -11,3 +11,7 @@ Color Blended Layers and Color Offscreen-Rendered:
 Fixing the bugs: slow shadows - Method 1:
 
 <img width="300" alt="P2" src="https://sun9-58.userapi.com/impg/sF_BXyn-jfU4SurWUXalm3Julpa-eZF1yD3zDw/5FccmEnL1Ug.jpg?size=996x2160&quality=95&sign=7a3ea722cdea2defb007ba2381bf438a&type=album"> <img width="300" alt="P2" src="https://sun9-62.userapi.com/impg/hwn5AF1-w8Qxlu2BZqcAb0VWsccilDmEsw2dTQ/Y6zBQlzAzK4.jpg?size=996x2160&quality=95&sign=82e481a4ed8caef5301e5b9cdd8deeea&type=album"> -> <img width="300" alt="P2" src="https://sun9-35.userapi.com/impg/3kYWhdoGoCRfwsuhCu7ch_--7PP6X1pdZVpgXQ/kTsqa3tR1NA.jpg?size=996x2160&quality=95&sign=1c9c54f0d2b37d5b4954e286045fb2bb&type=album">
+
+Fixing the bugs: slow shadows - Method 2:
+
+<img width="300" alt="P2" src="https://sun9-58.userapi.com/impg/sF_BXyn-jfU4SurWUXalm3Julpa-eZF1yD3zDw/5FccmEnL1Ug.jpg?size=996x2160&quality=95&sign=7a3ea722cdea2defb007ba2381bf438a&type=album"> <img width="300" alt="P2" src="https://sun9-62.userapi.com/impg/hwn5AF1-w8Qxlu2BZqcAb0VWsccilDmEsw2dTQ/Y6zBQlzAzK4.jpg?size=996x2160&quality=95&sign=82e481a4ed8caef5301e5b9cdd8deeea&type=album"> -> <img width="300" alt="P2" src="https://sun9-65.userapi.com/impg/_mshZW6EzOS40TeCyB7xjkV_OWhAwHNyogeolA/WABcoRSomAU.jpg?size=996x2160&quality=95&sign=5c5e0f1bb4fa0f9ff57d2df56c867e85&type=album">
